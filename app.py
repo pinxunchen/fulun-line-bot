@@ -17,6 +17,7 @@ def handle_message(event):
             alt_text='訂車網址',
             contents={
                 'type': 'bubble',
+                'size':'kilo',
                 'body': {
                     'type': 'box',
                     'layout': 'vertical',
@@ -35,7 +36,9 @@ def handle_message(event):
                                 'type': 'uri',
                                 'label': '台北長照',
                                 'uri': 'https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform'
-                            }
+                            },
+                            'height':'sm',
+                            'offsetBottom':'sm',
                         },
                         {
                             'type': 'button',
