@@ -40,9 +40,6 @@ def handle_message(event):
                             'height':'sm',
                             'offsetBottom':'sm',
                         },
-                        {   'type':'separator'
-                            'margin':'xs'
-                        },
                         {
                             'type': 'button',
                             'style': 'link',
