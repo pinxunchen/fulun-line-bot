@@ -14,7 +14,7 @@ handler = WebhookHandler("fa1fd1143b0de6b63018eda97d4dcbea")
 # 定義處理用戶訊息的函數
 def handle_message(event):
 
-    if event.message.text == "我要預約":
+    if event.message.text == '我要預約':
         # 建立 FlexMessage
         flex_message = FlexSendMessage(
             alt_text="長照預約",
