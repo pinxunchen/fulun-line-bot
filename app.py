@@ -17,29 +17,72 @@ def handle_message(event):
             contents={
                 'type': 'bubble',
                 'body': {
-                    'type': 'box',
-                    'layout': 'vertical',
-                    'spacing': 'md',
-                    'contents': [
-                        {
-                            'type': 'text',
-                            'text': '我要訂車',
-                            'size': 'md',
-                            'wrap': True
-                        },
-                        {
-                            'type': 'button',
-                            'style': 'primary',
-                            'action': {
-                                'type': 'uri',
-                                'label': '訂車網址',
-                                'uri': 'https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform'
-                            }
-                        }
-                    ]
-                }
+  "type": "bubble",
+  "size": "kilo",
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "請選擇您的區域",
+        "size": "xl",
+        "weight": "bold"
+      }
+    ]
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "台北長照",
+          "uri": "https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform"
+        },
+        "height": "sm",
+        "offsetBottom": "sm"
+      },
+      {
+        "type": "separator",
+        "margin": "xs"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "新北長照",
+          "uri": "http://linecorp.com/"
+        },
+        "offsetTop": "md"
+      },
+      {
+        "type": "separator",
+        "margin": "md"
+      },
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "桃園長照",
+          "uri": "http://linecorp.com/"
+        },
+        "offsetTop": "md"
+      }
+    ],
+    "alignItems": "center"
+  },
+  "styles": {
+    "body": {
+      "separator": true
+    }
+  }
+}
             }
         )
+        
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 # 設定 Webhook 路由，接收 Line 平台發送的事件
