@@ -78,7 +78,7 @@ def handle_message(event):
                 },
                 'styles': {
                     'body': {
-                        'separator': true
+                        'separator': True
                     }
                 }
             }
