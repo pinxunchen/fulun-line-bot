@@ -39,7 +39,17 @@ def handle_message(event):
                             },
                             'height':'sm',
                             'offsetBottom':'sm',
-                        },
+                        }
+                    ]
+                },
+                {    
+                    'type':'separator'
+                }
+                {
+                    'type': 'box',
+                    'layout': 'vertical',
+                    'spacing': 'md',
+                    'contents': [
                         {
                             'type': 'button',
                             'style': 'link',
@@ -47,16 +57,9 @@ def handle_message(event):
                                 'type': 'uri',
                                 'label': '新北長照',
                                 'uri': 'https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform'
-                            }
-                        },
-                        {
-                            'type': 'button',
-                            'style': 'link',
-                            'action': {
-                                'type': 'uri',
-                                'label': '桃園長照',
-                                'uri': 'https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform'
-                            }
+                            },
+                            'height':'sm',
+                            'offsetBottom':'sm',
                         }
                     ]
                 }
