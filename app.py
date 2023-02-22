@@ -42,9 +42,6 @@ def handle_message(event):
                         }
                     ]
                 },
-                {    
-                    'type':'separator'
-                }
                 {
                     'type': 'box',
                     'layout': 'vertical',
