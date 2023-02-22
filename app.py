@@ -7,84 +7,84 @@ app = Flask(__name__)
 
 # 設定 Channel Access Token 和 Channel Secret
 line_bot_api = LineBotApi(
-    "mlQ7oqRMEbtzdaO0lG6BmHe2TxMyNv/nEn75lwpOZE0HR3W+nMB8PjBbrhlqOO5Ic7nie1aVaZZAjbDL4MJsz2jo+cMuPs2v/up2vmoIqv7RBxEx8VR9456FmZqjNc5k5I5j/Cwn3OzbLS5CT+4/BAdB04t89/1O/w1cDnyilFU="
+    'mlQ7oqRMEbtzdaO0lG6BmHe2TxMyNv/nEn75lwpOZE0HR3W+nMB8PjBbrhlqOO5Ic7nie1aVaZZAjbDL4MJsz2jo+cMuPs2v/up2vmoIqv7RBxEx8VR9456FmZqjNc5k5I5j/Cwn3OzbLS5CT+4/BAdB04t89/1O/w1cDnyilFU='
 )
-handler = WebhookHandler("fa1fd1143b0de6b63018eda97d4dcbea")
+handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
 
 # 定義處理用戶訊息的函數
 def handle_message(event):
-    if event.message.text == "我要預約":
+    if event.message.text == '我要預約':
         # 建立 FlexMessage
         flex_message = FlexSendMessage(
-            alt_text="長照預約",
+            alt_text='長照預約',
             contents={
-                "type": "bubble",
-                "size": "kilo",
-                "header": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
+                'type': 'bubble',
+                'size': 'kilo',
+                'header': {
+                    'type': 'box',
+                    'layout': 'vertical',
+                    'contents': [
                         {
-                            "type": "text",
-                            "text": "請選擇您的區域",
-                            "size": "xl",
-                            "weight": "bold",
+                            'type': 'text',
+                            'text': '請選擇您的區域',
+                            'size': 'xl',
+                            'weight': 'bold',
                         }
                     ],
                 },
-                "body": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
+                'body': {
+                    'type': 'box',
+                    'layout': 'vertical',
+                    'contents': [
                         {
-                            "type": "button",
-                            "action": {
-                                "type": "uri",
-                                "label": "台北長照",
-                                "uri": "https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform",
+                            'type': 'button',
+                            'action': {
+                                'type': 'uri',
+                                'label': '台北長照',
+                                'uri': 'https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform',
                             },
-                            "height": "sm",
-                            "offsetBottom": "sm",
+                            'height': 'sm',
+                            'offsetBottom': 'sm',
                         },
-                        {"type": "separator", "margin": "xs"},
+                        {'type': 'separator', 'margin': 'xs'},
                         {
-                            "type": "button",
-                            "action": {
-                                "type": "uri",
-                                "label": "新北長照",
-                                "uri": "http://linecorp.com/",
+                            'type': 'button',
+                            'action': {
+                                'type': 'uri',
+                                'label': '新北長照',
+                                'uri': 'http://linecorp.com/',
                             },
-                            "offsetTop": "md",
+                            'offsetTop': 'md',
                         },
-                        {"type": "separator", "margin": "md"},
+                        {'type': 'separator', 'margin': 'md'},
                         {
-                            "type": "button",
-                            "action": {
-                                "type": "uri",
-                                "label": "桃園長照",
-                                "uri": "http://linecorp.com/",
+                            'type': 'button',
+                            'action': {
+                                'type': 'uri',
+                                'label': '桃園長照',
+                                'uri': 'http://linecorp.com/',
                             },
-                            "offsetTop": "md",
+                            'offsetTop': 'md',
                         },
                     ],
-                    "alignItems": "center",
+                    'alignItems': 'center',
                 },
-                "styles": {"body": {"separator": true}},
+                'styles': {'body': {'separator': True}},
             },
         )
 
 
 # 設定 Webhook 路由，接收 Line 平台發送的事件
-@app.route("/callback", methods=["POST"])
+@app.route('/callback', methods=['POST'])
 def webhook():
-    signature = request.headers["X-Line-Signature"]
+    signature = request.headers['X-Line-Signature']
     body = request.get_data(as_text=True)
     try:
         handler.handle(body, signature)
     except:
-        return "Error"
-    return "OK"
+        return 'Error'
+    return 'OK'
 
 
 # 設定處理用戶訊息的路由
@@ -93,5 +93,5 @@ def handle_message_event(event):
     handle_message(event)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run()
