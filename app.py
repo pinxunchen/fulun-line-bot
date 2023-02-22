@@ -16,7 +16,7 @@ def handle_message(event):
     # 如果接收到的訊息是「我要預約」，則回覆一個 FlexMessage，包含訂車網址的超連結
     if event.message.text == '我要預約':
         flex_message = FlexSendMessage(
-            
+            alt_text='訂車網址',
             contents={
                 'type': 'bubble',
                 'hero': {
