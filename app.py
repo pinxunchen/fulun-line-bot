@@ -21,18 +21,6 @@ def handle_message(event):
             contents={
                 'type': 'bubble',
                 'size': 'kilo',
-                'header': {
-                    'type': 'box',
-                    'layout': 'vertical',
-                    'contents': [
-                        {
-                            'type': 'text',
-                            'text': '請選擇您的區域',
-                            'size': 'xl',
-                            'weight': 'bold'
-                        }
-                    ]
-                },
                 'body': {
                     'type': 'box',
                     'layout': 'vertical',
