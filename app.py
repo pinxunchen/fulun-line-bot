@@ -13,44 +13,75 @@ handler = WebhookHandler("fa1fd1143b0de6b63018eda97d4dcbea")
 
 # 定義處理用戶訊息的函數
 def handle_message(event):
-    # 如果接收到的訊息是「我要預約」，則回覆一個 FlexMessage，包含訂車網址的超連結
-    if event.message.text == '我要預約':
-        flex_message = FlexSendMessage(
-            alt_text='訂車網址',
+    if event.message.text == "我要預約":
+        # 建立 FlexMessage
+        flex_msg = FlexSendMessage(
+            alt_text="長照預約",
             contents={
-                'type': 'bubble',
-                'hero': {
-                    'type': 'image',
-                    'url': 'https://example.com/images/bot/header.png',
-                    'size': 'full',
-                    'aspectRatio': '20:10',
-                    'aspectMode': 'cover'
-                },
-                'body': {
-                    'type': 'box',
-                    'layout': 'vertical',
-                    'spacing': 'md',
-                    'contents': [
+                "type": "bubble",
+                "size": "kilo",
+                "header": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
                         {
-                            'type': 'text',
-                            'text': '請點擊以下連結進行訂車',
-                            'size': 'md',
-                            'wrap': True
-                        },
-                        {
-                            'type': 'button',
-                            'style': 'primary',
-                            'action': {
-                                'type': 'uri',
-                                'label': '訂車網址',
-                                'uri': 'https://example.com/booking'
-                            }
+                            "type": "text",
+                            "text": "請選擇您的區域",
+                            "size": "xl",
+                            "weight": "bold"
                         }
                     ]
+                },
+                "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                        {
+                            "type": "button",
+                            "action": {
+                                "type": "uri",
+                                "label": "台北長照",
+                                "uri": "https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform"
+                            },
+                            "height": "sm",
+                            "offsetBottom": "sm"
+                        },
+                        {
+                            "type": "separator",
+                            "margin": "xs"
+                        },
+                        {
+                            "type": "button",
+                            "action": {
+                                "type": "uri",
+                                "label": "新北長照",
+                                "uri": "http://linecorp.com/"
+                            },
+                            "offsetTop": "md"
+                        },
+                        {
+                            "type": "separator",
+                            "margin": "md"
+                        },
+                        {
+                            "type": "button",
+                            "action": {
+                                "type": "uri",
+                                "label": "桃園長照",
+                                "uri": "http://linecorp.com/"
+                            },
+                            "offsetTop": "md"
+                        }
+                    ],
+                    "alignItems": "center"
+                },
+                "styles": {
+                    "body": {
+                        "separator": true
+                    }
                 }
             }
         )
-        line_bot_api.reply_message(event.reply_token, flex_message)
 
 # 設定 Webhook 路由，接收 Line 平台發送的事件
 @app.route('/callback', methods=['POST'])
