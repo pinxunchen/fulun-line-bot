@@ -31,7 +31,7 @@ def handle_message(event):
                         },
                         {
                             'type': 'button',
-                            'style': 'primary',
+                            'style': 'link',
                             'action': {
                                 'type': 'uri',
                                 'label': '台北長照',
@@ -40,9 +40,12 @@ def handle_message(event):
                             'height':'sm',
                             'offsetBottom':'sm',
                         },
+                        {   'type':'separator'
+                            'margin':'xs'
+                        },
                         {
                             'type': 'button',
-                            'style': 'primary',
+                            'style': 'link',
                             'action': {
                                 'type': 'uri',
                                 'label': '新北長照',
@@ -51,7 +54,7 @@ def handle_message(event):
                         },
                         {
                             'type': 'button',
-                            'style': 'primary',
+                            'style': 'link',
                             'action': {
                                 'type': 'uri',
                                 'label': '桃園長照',
