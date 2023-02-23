@@ -14,11 +14,11 @@ def handle_message(event):
     if event.message.text == '我要預約':
         flex_message = FlexSendMessage(
             alt_text='訂車網址',
-            contents={ 
-               "type": "bubble",
-               "size": "kilo",
-               "header": {
-               "type": "box",
+            contents={
+  "type": "bubble",
+  "size": "kilo",
+  "header": {
+    "type": "box",
     "layout": "vertical",
     "contents": [
       {
@@ -26,7 +26,9 @@ def handle_message(event):
         "text": "請選擇您的區域",
         "size": "xl",
         "weight": "bold",
-        "margin": "none"
+        "margin": "none",
+        "offsetStart": "md",
+        "offsetTop": "lg"
       }
     ],
     "offsetTop": "md",
@@ -37,55 +39,66 @@ def handle_message(event):
     "layout": "vertical",
     "contents": [
       {
-        "type": "button",
+        "type": "separator",
+        "margin": "xl"
+      },
+      {
+        "type": "text",
+        "text": "台北長照",
         "action": {
           "type": "uri",
-          "label": "台北長照",
-          "uri": "https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform"
-        }
-      },
-      "contents": [
-          {
-            "type": "text",
-            "text": "台北長照",
-            "size": "lg"
-          }
-        ],
-      {
-        "type": "separator"
+          "label": "action",
+          "uri": "https://docs.google.com/forms/d/e/1FAIpQLSdapo8d0oqrhj_ZWWK6LIIk2hGsiO9ESLoVxX7EWtzTtc7C_Q/viewform"
+        },
+        "weight": "bold",
+        "margin": "md",
+        "size": "xl",
+        "align": "center",
+        "offsetTop": "md"
       },
       {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "button",
-            "action": {
-              "type": "uri",
-              "label": "新北長照",
-              "uri": "http://linecorp.com/"
-            }
-          },
-          {
-            "type": "separator"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "button",
-                "action": {
-                  "type": "uri",
-                  "label": "桃園長照",
-                  "uri": "http://linecorp.com/"
-                }
-              }
-            ]
-          }
-        ]
+        "type": "separator",
+        "margin": "xl"
+      },
+      {
+        "type": "text",
+        "text": "新北長照",
+        "action": {
+          "type": "uri",
+          "label": "action",
+          "uri": "https://docs.google.com/forms/d/e/1FAIpQLSdapo8d0oqrhj_ZWWK6LIIk2hGsiO9ESLoVxX7EWtzTtc7C_Q/viewform"
+        },
+        "weight": "bold",
+        "margin": "md",
+        "size": "xl",
+        "align": "center",
+        "offsetTop": "md"
+      },
+      {
+        "type": "separator",
+        "margin": "xl"
+      },
+      {
+        "type": "text",
+        "text": "桃園長照",
+        "action": {
+          "type": "uri",
+          "label": "action",
+          "uri": "https://docs.google.com/forms/d/e/1FAIpQLSdapo8d0oqrhj_ZWWK6LIIk2hGsiO9ESLoVxX7EWtzTtc7C_Q/viewform"
+        },
+        "weight": "bold",
+        "margin": "lg",
+        "size": "xl",
+        "align": "center",
+        "offsetTop": "none"
       }
     ]
+  },
+  "styles": {
+    "header": {
+      "separatorColor": "#000000",
+      "separator": true
+    }
   }
 }
         )
