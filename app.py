@@ -15,52 +15,73 @@ def handle_message(event):
     if event.message.text == '我要預約':
         flex_message = FlexSendMessage(
             alt_text='訂車網址',
-            contents={
-                'type': 'bubble',
-                'size':'kilo',
-                'body': {
-                    'type': 'box',
-                    'layout': 'vertical',
-                    'spacing': 'md',
-                    'contents': [
-                        {
-                            'type': 'text',
-                            'text': '請點擊以下連結進行訂車',
-                            'size': 'md',
-                            'wrap': True
-                        },
-                        {
-                            'type': 'button',
-                            'style': 'primary',
-                            'action': {
-                                'type': 'uri',
-                                'label': '台北長照',
-                                'uri': 'https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform'
-                            },
-                            'height':'sm',
-                            'offsetBottom':'sm',
-                        },
-                        {
-                            'type': 'button',
-                            'style': 'primary',
-                            'action': {
-                                'type': 'uri',
-                                'label': '新北長照',
-                                'uri': 'https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform'
-                            }
-                        },
-                        {
-                            'type': 'button',
-                            'style': 'primary',
-                            'action': {
-                                'type': 'uri',
-                                'label': '桃園長照',
-                                'uri': 'https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform'
-                            }
-                        }
-                    ]
-                }
+            contents={ 
+               "type": "bubble",
+               "size": "kilo",
+               "header": {
+               "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "請選擇您的區域",
+        "size": "xl",
+        "weight": "bold",
+        "margin": "none"
+      }
+    ],
+    "offsetTop": "md",
+    "offsetStart": "xs"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "button",
+        "action": {
+          "type": "uri",
+          "label": "台北長照",
+          "uri": "https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform"
+        }
+      },
+      {
+        "type": "separator"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "uri",
+              "label": "新北長照",
+              "uri": "http://linecorp.com/"
             }
+          },
+          {
+            "type": "separator"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "桃園長照",
+                  "uri": "http://linecorp.com/"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
         )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
