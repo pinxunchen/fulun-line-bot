@@ -28,7 +28,7 @@ def handle_message(event):
         "weight": "bold",
         "margin": "none",
         "offsetStart": "md",
-        "offsetTop": "lg"
+        "offsetTop": "sm"
       }
     ],
     "offsetTop": "md",
@@ -39,66 +39,69 @@ def handle_message(event):
     "layout": "vertical",
     "contents": [
       {
-        "type": "separator",
-        "margin": "xl"
-      },
-      {
-        "type": "text",
-        "text": "台北長照",
-        "action": {
-          "type": "uri",
-          "label": "action",
-          "uri": "https://docs.google.com/forms/d/e/1FAIpQLSdapo8d0oqrhj_ZWWK6LIIk2hGsiO9ESLoVxX7EWtzTtc7C_Q/viewform"
-        },
-        "weight": "bold",
-        "margin": "md",
-        "size": "xl",
-        "align": "center",
-        "offsetTop": "md"
-      },
-      {
-        "type": "separator",
-        "margin": "xl"
-      },
-      {
-        "type": "text",
-        "text": "新北長照",
-        "action": {
-          "type": "uri",
-          "label": "action",
-          "uri": "https://docs.google.com/forms/d/e/1FAIpQLSdapo8d0oqrhj_ZWWK6LIIk2hGsiO9ESLoVxX7EWtzTtc7C_Q/viewform"
-        },
-        "weight": "bold",
-        "margin": "md",
-        "size": "xl",
-        "align": "center",
-        "offsetTop": "md"
-      },
-      {
-        "type": "separator",
-        "margin": "xl"
-      },
-      {
-        "type": "text",
-        "text": "桃園長照",
-        "action": {
-          "type": "uri",
-          "label": "action",
-          "uri": "https://docs.google.com/forms/d/e/1FAIpQLSdapo8d0oqrhj_ZWWK6LIIk2hGsiO9ESLoVxX7EWtzTtc7C_Q/viewform"
-        },
-        "weight": "bold",
-        "margin": "lg",
-        "size": "xl",
-        "align": "center",
-        "offsetTop": "none"
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "台北長照",
+            "size": "xl",
+            "align": "center",
+            "margin": "xl",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "http://linecorp.com/"
+            }
+          },
+          {
+            "type": "separator",
+            "margin": "lg"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "新北長照",
+                "size": "xl",
+                "align": "center",
+                "margin": "xl",
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "http://linecorp.com/"
+                }
+              },
+              {
+                "type": "separator",
+                "margin": "lg"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "桃園長照",
+                    "margin": "xl",
+                    "size": "xl",
+                    "align": "center",
+                    "action": {
+                      "type": "uri",
+                      "label": "action",
+                      "uri": "http://linecorp.com/"
+                    }
+                  }
+                ],
+                "paddingBottom": "sm"
+              }
+            ]
+          }
+        ]
       }
     ]
-  },
-  "styles": {
-    "header": {
-      "separatorColor": "#000000",
-      "separator": true
-    }
   }
 }
         )
