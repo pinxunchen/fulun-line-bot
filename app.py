@@ -45,7 +45,7 @@ def handle_message(event):
           {
             "type": "text",
             "text": "台北長照",
-            "size": "xl",
+            "size": "lg",
             "align": "center",
             "margin": "xl",
             "action": {
@@ -65,7 +65,7 @@ def handle_message(event):
               {
                 "type": "text",
                 "text": "新北長照",
-                "size": "xl",
+                "size": "lg",
                 "align": "center",
                 "margin": "xl",
                 "action": {
@@ -86,7 +86,7 @@ def handle_message(event):
                     "type": "text",
                     "text": "桃園長照",
                     "margin": "xl",
-                    "size": "xl",
+                    "size": "lg",
                     "align": "center",
                     "action": {
                       "type": "uri",
