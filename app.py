@@ -5,7 +5,6 @@ from linebot.models import MessageEvent, TextMessage, FlexSendMessage
 app = Flask(__name__)
 
 # 設定 Channel Access Token 和 Channel Secret
-
 line_bot_api = LineBotApi('mlQ7oqRMEbtzdaO0lG6BmHe2TxMyNv/nEn75lwpOZE0HR3W+nMB8PjBbrhlqOO5Ic7nie1aVaZZAjbDL4MJsz2jo+cMuPs2v/up2vmoIqv7RBxEx8VR9456FmZqjNc5k5I5j/Cwn3OzbLS5CT+4/BAdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
@@ -45,6 +44,13 @@ def handle_message(event):
           "uri": "https://docs.google.com/forms/d/e/1FAIpQLSd_ll8O23_KXjSfT0CagFJc56iL_6HvTnrdbFBYLCnZ9CFqxQ/viewform"
         }
       },
+      "contents": [
+          {
+            "type": "text",
+            "text": "台北長照",
+            "size": "lg"
+          }
+        ],
       {
         "type": "separator"
       },
@@ -84,6 +90,15 @@ def handle_message(event):
 }
         )
         line_bot_api.reply_message(event.reply_token, flex_message)
+
+
+
+
+
+
+
+
+
 
 # 設定 Webhook 路由，接收 Line 平台發送的事件
 @app.route('/callback', methods=['POST'])
