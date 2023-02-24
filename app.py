@@ -1,6 +1,7 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
 from linebot.models import MessageEvent, TextMessage, FlexSendMessage
+from flex_message import FlexMessage
 
 app = Flask(__name__)
 
@@ -101,7 +102,9 @@ def handle_message(event):
                 ]}]}]}})
         line_bot_api.reply_message(event.reply_token, flex_message)
 
-
+    if event.message.text == 'google':
+        flex_message = FlexSendMessage(alt_text='Google', contents=create_google_flex_message())
+        line_bot_api.reply_message(event.reply_token, flex_message)
 
 
 
@@ -124,7 +127,6 @@ def webhook():
 # 設定處理用戶訊息的路由
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message_event(event):
-    console.log(`使用者 ID: ${event.source.userId}`);
     handle_message(event)
 
 
