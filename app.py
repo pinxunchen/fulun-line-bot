@@ -1,7 +1,6 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
-from linebot.models import MessageEvent, TextMessage, FlexSendMessage,ImageSendMessage
-from flex_message import Testmessage
+from linebot.models import MessageEvent, TextMessage, FlexSendMessage
 
 app = Flask(__name__)
 
@@ -102,8 +101,6 @@ def handle_message(event):
                 ]
                 } ]}]} })
         line_bot_api.reply_message(event.reply_token, flex_message)
-
-        
 
 
 
