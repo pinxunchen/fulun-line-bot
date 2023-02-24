@@ -1,6 +1,6 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
-from linebot.models import MessageEvent, TextMessage, FlexSendMessage
+from linebot.models import MessageEvent, TextMessage, FlexSendMessage,ImageSendMessage
 from flex_message import create_google_flex_message
 
 app = Flask(__name__)
@@ -103,6 +103,7 @@ def handle_message(event):
                 } ]}]} })
         line_bot_api.reply_message(event.reply_token, flex_message)
 
+        
     elif event.message.text == 'google':
         flex_message = FlexSendMessage(alt_text='Google', contents=create_google_flex_message())
         line_bot_api.reply_message(event.reply_token, flex_message)
