@@ -13,8 +13,6 @@ handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 # 定義處理用戶訊息的函數
 def handle_message(event):
 
-    flex_messages = FlexMessages()
-    user_text = event.message.text
 
     # 如果接收到的訊息是「我要預約」，則回覆一個 FlexMessage，包含訂車網址的超連結
     if event.message.text == '我要預約':
@@ -107,16 +105,185 @@ def handle_message(event):
                 } ]}]} })
         line_bot_api.reply_message(event.reply_token, flex_message)
 
-    # 判斷使用者傳送的文字是否為 "google"
-    if user_text == "google":
-        # 取得對應的 Flex Message
-        message = flex_messages.get_message("google")
-        line_bot_api.reply_message(event.reply_token, message)
+    if event.message.text == '我要預約2':
+        flex_message = FlexSendMessage(
+            alt_text='訂車網址',
+            contents={
+            "type": "bubble",
+            "size": "kilo",
+            "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+            "type": "text",
+            "text": "請選擇您的區域",
+            "size": "xl",
+            "weight": "bold",
+            "margin": "none",
+            "offsetStart": "md",
+            "offsetTop": "sm"
+            }
+            ],
+            "offsetTop": "md",
+            "offsetStart": "xs"
+            },
+            "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+            "type": "text",
+            "text": "台北長照",
+            "size": "lg",
+            "align": "center",
+            "margin": "xl",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "http://linecorp.com/"
+            }
+            },
+            {
+            "type": "separator",
+            "margin": "lg"
+            },
+            {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "新北長照",
+                "size": "lg",
+                "align": "center",
+                "margin": "xl",
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "http://linecorp.com/"
+                }
+              },
+              {
+                "type": "separator",
+                "margin": "lg"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "桃園長照",
+                    "margin": "xl",
+                    "size": "lg",
+                    "align": "center",
+                    "action": {
+                      "type": "uri",
+                      "label": "action",
+                      "uri": "http://linecorp.com/"
+                    }
+                  }
+                ],
+                "paddingBottom": "sm"
+                }
+                ]
+                } ]}]} })
+        line_bot_api.reply_message(event.reply_token, flex_message)
 
-    if user_text == "yahoo":
-        # 取得對應的 Flex Message
-        message = flex_messages.get_message("yahoo")
-        line_bot_api.reply_message(event.reply_token, message)
+    if event.message.text == '我要預約3':
+        flex_message = FlexSendMessage(
+            alt_text='訂車網址',
+            contents={
+            "type": "bubble",
+            "size": "kilo",
+            "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+            "type": "text",
+            "text": "請選擇您的區域",
+            "size": "xl",
+            "weight": "bold",
+            "margin": "none",
+            "offsetStart": "md",
+            "offsetTop": "sm"
+            }
+            ],
+            "offsetTop": "md",
+            "offsetStart": "xs"
+            },
+            "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+            "type": "text",
+            "text": "台北長照",
+            "size": "lg",
+            "align": "center",
+            "margin": "xl",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "http://linecorp.com/"
+            }
+            },
+            {
+            "type": "separator",
+            "margin": "lg"
+            },
+            {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "新北長照",
+                "size": "lg",
+                "align": "center",
+                "margin": "xl",
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "http://linecorp.com/"
+                }
+              },
+              {
+                "type": "separator",
+                "margin": "lg"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "桃園長照",
+                    "margin": "xl",
+                    "size": "lg",
+                    "align": "center",
+                    "action": {
+                      "type": "uri",
+                      "label": "action",
+                      "uri": "http://linecorp.com/"
+                    }
+                  }
+                ],
+                "paddingBottom": "sm"
+                }
+                ]
+                } ]}]} })
+        line_bot_api.reply_message(event.reply_token, flex_message)
 
 
 
