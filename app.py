@@ -1,6 +1,8 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
 from linebot.models import MessageEvent, TextMessage, FlexSendMessage
+from test import *
+
 
 app = Flask(__name__)
 
@@ -10,7 +12,10 @@ handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
 # 定義處理用戶訊息的函數
 def handle_message(event):
-    
+
+    flex_messages = FlexMessages()
+    user_text = event.message.text
+
     # 如果接收到的訊息是「我要預約」，則回覆一個 FlexMessage，包含訂車網址的超連結
     if event.message.text == '我要預約':
         flex_message = FlexSendMessage(
@@ -101,6 +106,20 @@ def handle_message(event):
                 ]
                 } ]}]} })
         line_bot_api.reply_message(event.reply_token, flex_message)
+
+    # 判斷使用者傳送的文字是否為 "google"
+    if user_text == "google":
+        # 取得對應的 Flex Message
+        message = flex_messages.get_message("google")
+    if user_text == "yahoo":
+        # 取得對應的 Flex Message
+        message = flex_messages.get_message("yahoo")
+
+
+    # 將 Flex Message 傳送給 LINE Bot API
+    line_bot_api.reply_message(event.reply_token, message)
+
+
 
 
 
