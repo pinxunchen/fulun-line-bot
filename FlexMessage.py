@@ -3,7 +3,7 @@ from linebot.models import (
     TextComponent, URIAction, MessageAction
 )
 
-class FlexMessage:
+class Testmessage:
     def __init__(self):
         self.google_flex_message = self.create_google_flex_message()
         self.yahoo_flex_message = self.create_yahoo_flex_message()

@@ -1,7 +1,7 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
 from linebot.models import MessageEvent, TextMessage, FlexSendMessage,ImageSendMessage
-from flex_message import create_google_flex_message
+from flex_message import Testmessage
 
 app = Flask(__name__)
 
