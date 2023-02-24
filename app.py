@@ -1,7 +1,7 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
 from linebot.models import MessageEvent, TextMessage, FlexSendMessage
-from test import *
+from test import FlexMessages
 
 
 app = Flask(__name__)
@@ -111,20 +111,12 @@ def handle_message(event):
     if user_text == "google":
         # 取得對應的 Flex Message
         message = flex_messages.get_message("google")
+        line_bot_api.reply_message(event.reply_token, message)
+
     if user_text == "yahoo":
         # 取得對應的 Flex Message
         message = flex_messages.get_message("yahoo")
-
-
-    # 將 Flex Message 傳送給 LINE Bot API
-    line_bot_api.reply_message(event.reply_token, message)
-
-
-
-
-
-
-
+        line_bot_api.reply_message(event.reply_token, message)
 
 
 
