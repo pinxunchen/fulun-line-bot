@@ -1,6 +1,7 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
 from linebot.models import MessageEvent, TextMessage, FlexSendMessage
+from flex_message import create_google_flex_message
 
 app = Flask(__name__)
 
@@ -10,39 +11,40 @@ handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
 # 定義處理用戶訊息的函數
 def handle_message(event):
+    
     # 如果接收到的訊息是「我要預約」，則回覆一個 FlexMessage，包含訂車網址的超連結
     if event.message.text == '我要預約':
         flex_message = FlexSendMessage(
             alt_text='訂車網址',
             contents={
-  "type": "bubble",
-  "size": "kilo",
-  "header": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "請選擇您的區域",
-        "size": "xl",
-        "weight": "bold",
-        "margin": "none",
-        "offsetStart": "md",
-        "offsetTop": "sm"
-      }
-    ],
-    "offsetTop": "md",
-    "offsetStart": "xs"
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
+            "type": "bubble",
+            "size": "kilo",
+            "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+            "type": "text",
+            "text": "請選擇您的區域",
+            "size": "xl",
+            "weight": "bold",
+            "margin": "none",
+            "offsetStart": "md",
+            "offsetTop": "sm"
+            }
+            ],
+            "offsetTop": "md",
+            "offsetStart": "xs"
+            },
+            "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
             "type": "text",
             "text": "台北長照",
             "size": "lg",
@@ -53,12 +55,12 @@ def handle_message(event):
               "label": "action",
               "uri": "http://linecorp.com/"
             }
-          },
-          {
+            },
+            {
             "type": "separator",
             "margin": "lg"
-          },
-          {
+            },
+            {
             "type": "box",
             "layout": "vertical",
             "contents": [
@@ -96,15 +98,13 @@ def handle_message(event):
                   }
                 ],
                 "paddingBottom": "sm"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}
-        )
+                }
+                ]
+                } ]}]} })
+        line_bot_api.reply_message(event.reply_token, flex_message)
+
+    if event.message.text == 'google':
+        flex_message = FlexSendMessage(alt_text='Google', contents=create_google_flex_message())
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
