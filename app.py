@@ -10,9 +10,8 @@ handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
 # 定義處理用戶訊息的函數
 def handle_message(event):
-    
-    # 如果接收到的訊息是「我要預約」，則回覆一個 FlexMessage，包含訂車網址的超連結
-    if event.message.text == '我要預約':
+    # 如果接收到的訊息是「我想預約」，則回覆一個 FlexMessage
+    if event.message.text == '我想預約':
         flex_message = FlexSendMessage(
             alt_text='訂車網址',
             contents={
@@ -102,8 +101,8 @@ def handle_message(event):
                 } ]}]} })
         line_bot_api.reply_message(event.reply_token, flex_message)
 
-
-
+    
+    
 
 
 
