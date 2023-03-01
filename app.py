@@ -11,6 +11,13 @@ line_bot_api = LineBotApi('mlQ7oqRMEbtzdaO0lG6BmHe2TxMyNv/nEn75lwpOZE0HR3W+nMB8P
 handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
 
+def handle_message(event):
+    flex_massage_booking()
+
+
+
+
+
 
 # 設定 Webhook 路由，接收 Line 平台發送的事件
 @app.route('/callback', methods=['POST'])
@@ -26,7 +33,8 @@ def webhook():
 # 設定處理用戶訊息的路由
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message_event(event):
-    flex_massage_booking()
+    handle_message(event)
+    
 
     
 
