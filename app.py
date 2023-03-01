@@ -26,7 +26,7 @@ def webhook():
 # 設定處理用戶訊息的路由
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message_event(event):
-    flex_massage_booking(event)
+    flex_massage_booking()
 
     
 
