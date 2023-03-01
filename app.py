@@ -12,7 +12,7 @@ handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
 
 def handle_message(event):
-    flex_massage_booking()
+    message = FlexSendMessage(flex_massage_booking())
 
 
 
