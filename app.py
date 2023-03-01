@@ -34,6 +34,7 @@ def webhook():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message_event(event):
     handle_message(event)
+    flex_massage_booking()
     
 
     
