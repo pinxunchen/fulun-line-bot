@@ -1,10 +1,5 @@
-from linebot import LineBotApi, WebhookHandler
-from linebot.models import MessageEvent, TextMessage, FlexSendMessage
 
-
-
-def flex_massage_booking():
-    
+def flex_massage_booking():  
     # 如果接收到的訊息是「我想預約」，則回覆一個 FlexMessage
     if event.message.text == '我想預約':
         flex_message = FlexSendMessage(
@@ -96,4 +91,4 @@ def flex_massage_booking():
                 } ]}]} })
         
         line_bot_api.reply_message(event.reply_token, flex_message)
-        return  flex_message
+    return  flex_message
