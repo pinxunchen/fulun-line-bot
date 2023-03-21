@@ -58,9 +58,9 @@ def handle_message(event):
                     "size": "lg",
                     "align": "center",
                     "action": {
-                      "type": "message",
+                      "type": "uri",
                       "label": "action",
-                      "text": "如何預約"
+                      "uri": "http://linecorp.com/"
                     }
                   }
                 ],
@@ -76,9 +76,9 @@ def handle_message(event):
                     "align": "center",
                     "size": "lg",
                     "action": {
-                      "type": "message",
+                      "type": "uri",
                       "label": "action",
-                      "text": "交通收費"
+                      "uri": "http://linecorp.com/"
                     }
                   }
                 ],
@@ -94,9 +94,9 @@ def handle_message(event):
                     "align": "center",
                     "size": "lg",
                     "action": {
-                      "type": "message",
+                      "type": "uri",
                       "label": "action",
-                      "text": "爬梯機相關"
+                      "uri": "http://linecorp.com/"
                     }
                   }
                 ],
