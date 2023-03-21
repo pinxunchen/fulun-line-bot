@@ -105,35 +105,55 @@ def handle_message(event):
 
     elif event.message.text == '常見問題':
         flex_message = FlexSendMessage(
-            alt_text='訂車網址',
-            contents={ "type": "carousel",
-            "contents": [
-           {
-          "type": "bubble",
-          "hero": {
-          "type": "image",
-          "url": "https://github.com/pinxunchen/fulun-line-bot/blob/master/question.png"
-           },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": []
-      }
-    },
+            alt_text='常見問題',
+            contents={
+  "type": "carousel",
+  "contents": [
     {
       "type": "bubble",
+      "size": "kilo",
       "hero": {
         "type": "image",
-        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
+        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+        "size": "full",
+        "aspectMode": "cover"
       },
       "body": {
         "type": "box",
         "layout": "vertical",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "hello, world"
+              }
+            ]
+          }
+        ],
+        "margin": "sm"
+      },
+      "styles": {
+        "body": {
+          "separator": true,
+          "separatorColor": "#000000"
+        }
+      }
+    },
+    {
+      "type": "bubble",
+      "size": "kilo",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
         "contents": []
       }
     },
     {
       "type": "bubble",
+      "size": "kilo",
       "body": {
         "type": "box",
         "layout": "vertical",
@@ -141,12 +161,7 @@ def handle_message(event):
       }
     }
   ]
-
-
-
-
-
-            })
+})
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
