@@ -16,6 +16,97 @@ def handle_message(event):
         flex_message = FlexSendMessage(
             alt_text='訂車網址',
             contents={
+            "type": "bubble",
+            "size": "kilo",
+            "header": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+            "type": "text",
+            "text": "請選擇您的區域",
+            "size": "xl",
+            "weight": "bold",
+            "margin": "none",
+            "offsetStart": "md",
+            "offsetTop": "sm"
+            }
+            ],
+            "offsetTop": "md",
+            "offsetStart": "xs"
+            },
+            "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+            {
+            "type": "text",
+            "text": "台北長照",
+            "size": "lg",
+            "align": "center",
+            "margin": "xl",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "http://linecorp.com/"
+            }
+            },
+            {
+            "type": "separator",
+            "margin": "lg"
+            },
+            {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "新北長照",
+                "size": "lg",
+                "align": "center",
+                "margin": "xl",
+                "action": {
+                  "type": "uri",
+                  "label": "action",
+                  "uri": "http://linecorp.com/"
+                }
+              },
+              {
+                "type": "separator",
+                "margin": "lg"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "桃園長照",
+                    "margin": "xl",
+                    "size": "lg",
+                    "align": "center",
+                    "action": {
+                      "type": "uri",
+                      "label": "action",
+                      "uri": "http://linecorp.com/"
+                    }
+                  }
+                ],
+                "paddingBottom": "sm"
+                }
+                ]
+                } ]}]} })
+        line_bot_api.reply_message(event.reply_token, flex_message)
+
+
+    if event.message.text == '常見問題':
+        flex_message = FlexSendMessage(
+            alt_text='常見問題',
+            contents={
   "type": "carousel",
   "contents": [
     {
@@ -35,8 +126,7 @@ def handle_message(event):
             "margin": "md",
             "weight": "bold",
             "size": "lg",
-            "offsetTop": "md",
-            "offsetStart": "md"
+            "offsetTop": "md"
           }
         ]
       },
@@ -63,8 +153,7 @@ def handle_message(event):
                       "uri": "http://linecorp.com/"
                     }
                   }
-                ],
-                "paddingAll": "sm"
+                ]
               },
               {
                 "type": "box",
@@ -82,7 +171,7 @@ def handle_message(event):
                     }
                   }
                 ],
-                "paddingAll": "xl"
+                "paddingAll": "lg"
               },
               {
                 "type": "box",
@@ -99,16 +188,18 @@ def handle_message(event):
                       "uri": "http://linecorp.com/"
                     }
                   }
-                ],
-                "paddingAll": "sm"
+                ]
               }
             ],
             "paddingAll": "md"
           }
         ],
-        "spacing": "md",
-        "offsetBottom": "sm",
-        "paddingAll": "xs"
+        "spacing": "md"
+      },
+      "styles": {
+        "body": {
+          "separator": true
+        }
       }
     },
     {
