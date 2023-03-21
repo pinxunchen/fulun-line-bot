@@ -195,11 +195,6 @@ def handle_message(event):
           }
         ],
         "spacing": "md"
-      },
-      "styles": {
-        "body": {
-          "separator": true
-        }
       }
     },
     {
