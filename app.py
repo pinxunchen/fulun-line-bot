@@ -106,39 +106,20 @@ def handle_message(event):
     if event.message.text == '常見問題':
         flex_message = FlexSendMessage(
             alt_text='常見問題',
-            contents={ "type": "carousel",
-          "contents": [
+            contents={
+  "type": "carousel",
+  "contents": [
     {
       "type": "bubble",
       "size": "kilo",
       "hero": {
         "type": "image",
-        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
-        "size": "full",
-        "aspectMode": "cover"
+        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
       },
       "body": {
         "type": "box",
         "layout": "vertical",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "hello, world"
-              }
-            ]
-          }
-        ],
-        "margin": "sm"
-      },
-      "styles": {
-        "body": {
-          "separator": true,
-          "separatorColor": "#000000"
-        }
+        "contents": []
       }
     },
     {
