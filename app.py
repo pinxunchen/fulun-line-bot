@@ -103,12 +103,11 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
-    elif event.message.text == '常見問題':
+    if event.message.text == '常見問題':
         flex_message = FlexSendMessage(
             alt_text='常見問題',
-            contents={
-  "type": "carousel",
-  "contents": [
+            contents={ "type": "carousel",
+          "contents": [
     {
       "type": "bubble",
       "size": "kilo",
