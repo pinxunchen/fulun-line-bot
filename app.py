@@ -126,7 +126,8 @@ def handle_message(event):
             "margin": "md",
             "weight": "bold",
             "size": "lg",
-            "offsetTop": "md"
+            "offsetTop": "md",
+            "offsetStart": "md"
           }
         ]
       },
@@ -148,12 +149,13 @@ def handle_message(event):
                     "size": "lg",
                     "align": "center",
                     "action": {
-                      "type": "uri",
+                      "type": "message",
                       "label": "action",
-                      "uri": "http://linecorp.com/"
+                      "text": "如何預約"
                     }
                   }
-                ]
+                ],
+                "paddingAll": "sm"
               },
               {
                 "type": "box",
@@ -165,13 +167,13 @@ def handle_message(event):
                     "align": "center",
                     "size": "lg",
                     "action": {
-                      "type": "uri",
+                      "type": "message",
                       "label": "action",
-                      "uri": "http://linecorp.com/"
+                      "text": "交通收費"
                     }
                   }
                 ],
-                "paddingAll": "lg"
+                "paddingAll": "xl"
               },
               {
                 "type": "box",
@@ -183,18 +185,26 @@ def handle_message(event):
                     "align": "center",
                     "size": "lg",
                     "action": {
-                      "type": "uri",
+                      "type": "message",
                       "label": "action",
-                      "uri": "http://linecorp.com/"
+                      "text": "爬梯機相關"
                     }
                   }
-                ]
+                ],
+                "paddingAll": "sm"
               }
             ],
             "paddingAll": "md"
           }
         ],
-        "spacing": "md"
+        "spacing": "md",
+        "offsetBottom": "sm",
+        "paddingAll": "xs"
+      },
+      "styles": {
+        "body": {
+          "separator": true
+        }
       }
     },
     {
