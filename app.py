@@ -16,34 +16,42 @@ def handle_message(event):
         flex_message = FlexSendMessage(
             alt_text='訂車網址',
             contents={
-            "type": "bubble",
-            "size": "kilo",
-            "header": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-            {
-            "type": "text",
-            "text": "請選擇您的區域",
-            "size": "xl",
-            "weight": "bold",
-            "margin": "none",
-            "offsetStart": "md",
-            "offsetTop": "sm"
-            }
-            ],
-            "offsetTop": "md",
-            "offsetStart": "xs"
-            },
-            "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-            {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-            {
+  "type": "bubble",
+  "size": "kilo",
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "請選擇預約區域",
+        "size": "xl",
+        "weight": "bold",
+        "margin": "none",
+        "offsetTop": "sm",
+        "contents": []
+      },
+      {
+        "type": "text",
+        "text": "填寫表單後，將由客服推播趟次",
+        "margin": "sm",
+        "size": "sm",
+        "offsetTop": "sm",
+        "color": "#1E90FF"
+      }
+    ],
+    "offsetTop": "md",
+    "offsetStart": "xs"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
             "type": "text",
             "text": "台北長照",
             "size": "lg",
@@ -54,12 +62,12 @@ def handle_message(event):
               "label": "action",
               "uri": "http://linecorp.com/"
             }
-            },
-            {
+          },
+          {
             "type": "separator",
             "margin": "lg"
-            },
-            {
+          },
+          {
             "type": "box",
             "layout": "vertical",
             "contents": [
@@ -85,7 +93,7 @@ def handle_message(event):
                 "contents": [
                   {
                     "type": "text",
-                    "text": "桃園長照",
+                    "text": "自費交通╱愛接送",
                     "margin": "xl",
                     "size": "lg",
                     "align": "center",
@@ -95,11 +103,16 @@ def handle_message(event):
                       "uri": "http://linecorp.com/"
                     }
                   }
-                ],
-                "paddingBottom": "sm"
-                }
                 ]
-                } ]}]} })
+              }
+            ]
+          }
+        ],
+        "offsetBottom": "md"
+      }
+    ]
+  }
+})
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
