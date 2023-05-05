@@ -40,7 +40,7 @@ def handle_message(event):
         "color": "#1E90FF"
       }
     ],
-    "offsetTop": "md",
+    "offsetTop": "xs",
     "offsetStart": "xs"
   },
   "body": {
@@ -113,6 +113,12 @@ def handle_message(event):
         "offsetBottom": "md"
       }
     ]
+  },
+  "styles": {
+    "body": {
+      "separator": true,
+      "separatorColor": "#BEBEBE"
+    }
   }
 })
         line_bot_api.reply_message(event.reply_token, flex_message)
