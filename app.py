@@ -15,35 +15,33 @@ def handle_message(event):
     if event.message.text == '我想預約':
         flex_message = FlexSendMessage(
             alt_text='訂車網址',
-            contents={
-            "type": "bubble",
-            "size": "kilo",
-            "header": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-            {
-            "type": "text",
-            "text": "請選擇您的區域",
-            "size": "xl",
-            "weight": "bold",
-            "margin": "none",
-            "offsetStart": "md",
-            "offsetTop": "sm"
-            }
-            ],
-            "offsetTop": "md",
-            "offsetStart": "xs"
-            },
-            "body": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-            {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-            {
+            contents={{
+  "type": "bubble",
+  "size": "kilo",
+  "header": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "請選擇您的區域",
+        "size": "xl",
+        "weight": "bold",
+        "offsetStart": "sm",
+        "offsetTop": "md"
+      }
+    ],
+    "offsetTop": "xs"
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
             "type": "text",
             "text": "台北長照",
             "size": "lg",
@@ -54,52 +52,45 @@ def handle_message(event):
               "label": "action",
               "uri": "http://linecorp.com/"
             }
-            },
-            {
+          },
+          {
             "type": "separator",
             "margin": "lg"
-            },
-            {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "新北長照",
-                "size": "lg",
-                "align": "center",
-                "margin": "xl",
-                "action": {
-                  "type": "uri",
-                  "label": "action",
-                  "uri": "http://linecorp.com/"
-                }
-              },
-              {
-                "type": "separator",
-                "margin": "lg"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "桃園長照",
-                    "margin": "xl",
-                    "size": "lg",
-                    "align": "center",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": "http://linecorp.com/"
-                    }
-                  }
-                ],
-                "paddingBottom": "sm"
-                }
-                ]
-                } ]}]} })
+          },
+          {
+            "type": "text",
+            "text": "台北長照",
+            "size": "lg",
+            "align": "center",
+            "margin": "xl",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "http://linecorp.com/"
+            }
+          },
+          {
+            "type": "separator"
+          },
+          {
+            "type": "text",
+            "text": "台北長照",
+            "size": "lg",
+            "align": "center",
+            "margin": "xl",
+            "action": {
+              "type": "uri",
+              "label": "action",
+              "uri": "http://linecorp.com/"
+            }
+          }
+        ],
+        "offsetBottom": "sm"
+      }
+    ]
+  }
+}
+})
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
@@ -112,10 +103,6 @@ def handle_message(event):
 
 
     
-    
-@app.route("/")
-def index():
-    return render_template("./app.html")
 
 
 # 設定 Webhook 路由，接收 Line 平台發送的事件
