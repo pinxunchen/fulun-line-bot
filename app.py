@@ -65,7 +65,8 @@ def handle_message(event):
           },
           {
             "type": "separator",
-            "margin": "lg"
+            "margin": "lg",
+            "color": "#BEBEBE"
           },
           {
             "type": "box",
@@ -85,7 +86,8 @@ def handle_message(event):
               },
               {
                 "type": "separator",
-                "margin": "lg"
+                "margin": "lg",
+                "color": "#BEBEBE"
               },
               {
                 "type": "box",
@@ -93,7 +95,7 @@ def handle_message(event):
                 "contents": [
                   {
                     "type": "text",
-                    "text": "自費交通╱愛接送",
+                    "text": "僅愛接送(自費交通)",
                     "margin": "xl",
                     "size": "lg",
                     "align": "center",
