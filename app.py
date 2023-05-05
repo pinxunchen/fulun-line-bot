@@ -104,131 +104,18 @@ def handle_message(event):
 
 
     if event.message.text == '常見問題':
-        flex_message = FlexSendMessage(
+        flex_message = FlexSendMessage(            
             alt_text='常見問題',
             contents={
-  "type": "carousel",
-  "contents": [
-    {
-      "type": "bubble",
-      "size": "kilo",
-      "header": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "image",
-            "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/question.png"
-          },
-          {
-            "type": "text",
-            "text": "查詢常見問題",
-            "margin": "md",
-            "weight": "bold",
-            "size": "lg",
-            "offsetTop": "md"
-          }
-        ]
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "如何預約",
-                    "size": "lg",
-                    "align": "center",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": "http://linecorp.com/"
-                    }
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "交通收費相關",
-                    "align": "center",
-                    "size": "lg",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": "http://linecorp.com/"
-                    }
-                  }
-                ],
-                "paddingAll": "lg"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "爬梯機相關",
-                    "align": "center",
-                    "size": "lg",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": "http://linecorp.com/"
-                    }
-                  }
-                ]
-              }
-            ],
-            "paddingAll": "md"
-          }
-        ],
-        "spacing": "md"
-      },
-      "styles": {
-        "body": {
-          "separator": true
-        }
-      }
-    },
-    {
-      "type": "bubble",
-      "size": "kilo",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": []
-      }
-    },
-    {
-      "type": "bubble",
-      "size": "kilo",
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": []
-      }
-    }
-  ]
-}
-            )
+        })
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
     
     
-
+@app.route("/")
+def index():
+    return render_template("./app.html")
 
 
 # 設定 Webhook 路由，接收 Line 平台發送的事件
