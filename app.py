@@ -49,7 +49,7 @@ def handle_message(event):
       },
       {
         "type": "separator",
-        "margin": "lg",
+        "margin": "xl",
         "color": "#BEBEBF"
       }
     ]
@@ -59,21 +59,22 @@ def handle_message(event):
     "layout": "vertical",
     "contents": [
       {
+        "type": "text",
+        "text": "台北長照",
+        "size": "md",
+        "align": "center",
+        "margin": "md",
+        "action": {
+          "type": "uri",
+          "label": "action",
+          "uri": "http://linecorp.com/"
+        },
+        "offsetBottom": "sm"
+      },
+      {
         "type": "box",
         "layout": "vertical",
         "contents": [
-          {
-            "type": "text",
-            "text": "台北長照",
-            "size": "md",
-            "align": "center",
-            "margin": "xl",
-            "action": {
-              "type": "uri",
-              "label": "action",
-              "uri": "http://linecorp.com/"
-            }
-          },
           {
             "type": "separator",
             "margin": "lg",
