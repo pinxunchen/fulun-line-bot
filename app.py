@@ -15,11 +15,10 @@ def handle_message(event):
     if event.message.text == '我想預約':
         flex_message = FlexSendMessage(
             alt_text='訂車網址',
-            contents={
-  "type": "bubble",
-  "size": "kilo",
-  "hero": {
-    "type": "box",
+            contents={"type": "bubble",
+            "size": "kilo",
+            "hero": {
+            "type": "box",
     "layout": "vertical",
     "contents": [
       {
@@ -132,8 +131,8 @@ def handle_message(event):
 
 
     if event.message.text == '常見問題':
-        flex_message = TextSendMessage(text='Hello, world')
-        line_bot_api.reply_message(event.reply_token, flex_message)
+        text_message = TextSendMessage(text='測試123')
+        line_bot_api.reply_message(event.reply_token, text_message)
 
 
     
