@@ -1,6 +1,6 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
-from linebot.models import MessageEvent, TextMessage, FlexSendMessage
+from linebot.models import MessageEvent, TextMessage, FlexSendMessage, FileSendMessage
 
 app = Flask(__name__)
 
@@ -10,6 +10,13 @@ handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
 # 定義處理用戶訊息的函數
 def handle_message(event):
+
+
+    # 如果接收到的訊息是「首次切結書」，則回覆一個 FileSendMessage
+    if event.message.text == '首次切結書':
+        message = FileSendMessage(original_content_url='https://github.com/pinxunchen/fulun-line-bot/raw/master/%E9%A6%96%E6%AC%A1%E5%88%87%E7%B5%90%E6%9B%B8.pdf', file_name='首次切結書.pdf')
+        line_bot_api.reply_message(event.reply_token, message)
+
     
     # 如果接收到的訊息是「我想預約」，則回覆一個 FlexMessage
     if event.message.text == '我想預約':
@@ -19,120 +26,117 @@ def handle_message(event):
             "size": "kilo",
             "hero": {
             "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "image",
-        "size": "lg",
-        "aspectMode": "cover",
-        "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/booking.png",
-        "margin": "xl"
-      },
-      {
-        "type": "text",
-        "text": "請選擇預約區域",
-        "size": "lg",
-        "weight": "bold",
-        "margin": "none",
-        "offsetTop": "md",
-        "contents": [],
-        "offsetStart": "lg"
-      },
-      {
-        "type": "text",
-        "text": "填寫表單後，將由客服推播趟次",
-        "size": "sm",
-        "color": "#1E90FF",
-        "offsetTop": "md",
-        "offsetStart": "lg"
-      },
-      {
-        "type": "separator",
-        "margin": "xl",
-        "color": "#BEBEBF"
-      }
-    ]
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "台北長照",
-        "size": "md",
-        "align": "center",
-        "margin": "lg",
-        "action": {
-          "type": "uri",
-          "label": "action",
-          "uri": "http://linecorp.com/"
-        },
-        "offsetBottom": "sm"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "separator",
-            "margin": "lg",
-            "color": "#BEBEBE"
+            "layout": "vertical",
+             "contents": [
+              {
+                "type": "image",
+                "size": "lg",
+                "aspectMode": "cover",
+                "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/booking.png",
+                "margin": "xl"
+              },
+              {
+                "type": "text",
+                "text": "請選擇預約區域",
+                "size": "lg",
+                "weight": "bold",
+                "margin": "none",
+                "offsetTop": "md",
+                "contents": [],
+                "offsetStart": "lg"
+                 },
+              {
+                "type": "text",
+                "text": "填寫表單後，將由客服推播趟次",
+                "size": "sm",
+                "color": "#1E90FF",
+                "offsetTop": "md",
+                "offsetStart": "lg"
+              },
+              {
+                "type": "separator",
+                "margin": "xl",
+                "color": "#BEBEBF"
+              }
+            ]
           },
-          {
+          "body": {
             "type": "box",
             "layout": "vertical",
             "contents": [
               {
                 "type": "text",
-                "text": "新北長照",
+                "text": "台北長照",
                 "size": "md",
                 "align": "center",
-                "margin": "xxl",
+                "margin": "lg",
                 "action": {
                   "type": "uri",
                   "label": "action",
                   "uri": "http://linecorp.com/"
-                }
-              },
-              {
-                "type": "separator",
-                "margin": "lg",
-                "color": "#BEBEBE"
+                },
+                "offsetBottom": "sm"
               },
               {
                 "type": "box",
                 "layout": "vertical",
                 "contents": [
                   {
-                    "type": "text",
-                    "text": "僅愛接送(自費交通)",
-                    "margin": "xxl",
-                    "size": "md",
-                    "align": "center",
-                    "action": {
-                      "type": "uri",
-                      "label": "action",
-                      "uri": "https://github.com/pinxunchen/fulun-line-bot/raw/master/%E9%A6%96%E6%AC%A1%E5%88%87%E7%B5%90%E6%9B%B8.pdf"
-                    }
+                    "type": "separator",
+                    "margin": "lg",
+                    "color": "#BEBEBE"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "新北長照",
+                        "size": "md",
+                        "align": "center",
+                        "margin": "xxl",
+                        "action": {
+                          "type": "uri",
+                          "label": "action",
+                          "uri": "http://linecorp.com/"
+                        }
+                      },
+                      {
+                        "type": "separator",
+                        "margin": "lg",
+                        "color": "#BEBEBE"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "僅愛接送(自費交通)",
+                            "margin": "xxl",
+                            "size": "md",
+                            "align": "center",
+                            "action": {
+                              "type": "uri",
+                              "label": "action",
+                              "uri": "https://github.com/pinxunchen/fulun-line-bot/raw/master/%E9%A6%96%E6%AC%A1%E5%88%87%E7%B5%90%E6%9B%B8.pdf"
+                            }
+                          }
+                        ]
+                      }
+                    ]
                   }
-                ]
+                ],
+                "offsetBottom": "md"
               }
             ]
           }
-        ],
-        "offsetBottom": "md"
-      }
-    ]
-  }
-}
-)
+        }
+        )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
-    if event.message.text == '常見問題':
-        text_message = TextSendMessage(text='測試123')
-        line_bot_api.reply_message(event.reply_token, text_message)
 
 
     
