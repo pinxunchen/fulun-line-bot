@@ -63,7 +63,7 @@ def handle_message(event):
         "text": "台北長照",
         "size": "md",
         "align": "center",
-        "margin": "md",
+        "margin": "lg",
         "action": {
           "type": "uri",
           "label": "action",
@@ -89,7 +89,7 @@ def handle_message(event):
                 "text": "新北長照",
                 "size": "md",
                 "align": "center",
-                "margin": "xl",
+                "margin": "xxl",
                 "action": {
                   "type": "uri",
                   "label": "action",
@@ -108,7 +108,7 @@ def handle_message(event):
                   {
                     "type": "text",
                     "text": "僅愛接送(自費交通)",
-                    "margin": "xl",
+                    "margin": "xxl",
                     "size": "md",
                     "align": "center",
                     "action": {
