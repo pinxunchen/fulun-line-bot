@@ -130,9 +130,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
-    if event.message.text == '首次切結書':
-        message = FileSendMessage(original_content_url='https://github.com/pinxunchen/fulun-line-bot/raw/master/%E9%A6%96%E6%AC%A1%E5%88%87%E7%B5%90%E6%9B%B8.pdf', file_name='首次切結書.pdf')
-        line_bot_api.reply_message(event.reply_token, message)
+
 
 
     
