@@ -131,7 +131,7 @@ def handle_message(event):
 
 
     if event.message.text == '首次切結書':
-        message = FileSendMessage(original_content_url='https://drive.google.com/drive/u/0/folders/1uNaK2F8KJC28JC3nmKUKOCPfXfJN2o0J', file_name='首次切結書.pdf')
+        message = FileSendMessage(original_content_url='https://drive.google.com/file/d/1pp2UH3tUKPOBN8hBdyiQM4E5WF-znEnL/view?usp=share_link', file_name='首次切結書.pdf')
         line_bot_api.reply_message(event.reply_token, message)
 
 
