@@ -66,7 +66,7 @@ def handle_message(event):
         "action": {
           "type": "uri",
           "label": "action",
-          "uri": "https://github.com/pinxunchen/fulun-line-bot/raw/master/%E9%A6%96%E6%AC%A1%E5%88%87%E7%B5%90%E6%9B%B8.pdf"
+          "uri": "http://linecorp.com/"
         },
         "offsetBottom": "sm"
       },
