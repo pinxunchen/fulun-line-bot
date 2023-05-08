@@ -18,30 +18,41 @@ def handle_message(event):
             contents={
   "type": "bubble",
   "size": "kilo",
-  "header": {
+  "hero": {
     "type": "box",
     "layout": "vertical",
     "contents": [
       {
+        "type": "image",
+        "size": "lg",
+        "aspectMode": "cover",
+        "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/booking.png",
+        "margin": "xl"
+      },
+      {
         "type": "text",
         "text": "請選擇預約區域",
-        "size": "xl",
+        "size": "lg",
         "weight": "bold",
         "margin": "none",
-        "offsetTop": "sm",
-        "contents": []
+        "offsetTop": "md",
+        "contents": [],
+        "offsetStart": "lg"
       },
       {
         "type": "text",
         "text": "填寫表單後，將由客服推播趟次",
-        "margin": "sm",
         "size": "sm",
-        "offsetTop": "sm",
-        "color": "#1E90FF"
+        "color": "#1E90FF",
+        "offsetTop": "md",
+        "offsetStart": "lg"
+      },
+      {
+        "type": "separator",
+        "margin": "lg",
+        "color": "#BEBEBF"
       }
-    ],
-    "offsetTop": "xs",
-    "offsetStart": "xs"
+    ]
   },
   "body": {
     "type": "box",
@@ -54,7 +65,7 @@ def handle_message(event):
           {
             "type": "text",
             "text": "台北長照",
-            "size": "lg",
+            "size": "md",
             "align": "center",
             "margin": "xl",
             "action": {
@@ -75,7 +86,7 @@ def handle_message(event):
               {
                 "type": "text",
                 "text": "新北長照",
-                "size": "lg",
+                "size": "md",
                 "align": "center",
                 "margin": "xl",
                 "action": {
@@ -97,7 +108,7 @@ def handle_message(event):
                     "type": "text",
                     "text": "僅愛接送(自費交通)",
                     "margin": "xl",
-                    "size": "lg",
+                    "size": "md",
                     "align": "center",
                     "action": {
                       "type": "uri",
@@ -113,11 +124,6 @@ def handle_message(event):
         "offsetBottom": "md"
       }
     ]
-  },
-  "styles": {
-    "header": {
-      "backgroundColor": "#FFFFF0"
-    }
   }
 }
 )
