@@ -132,10 +132,7 @@ def handle_message(event):
 
 
     if event.message.text == '常見問題':
-        flex_message = FlexSendMessage(            
-            alt_text='常見問題',
-            contents={
-        })
+        flex_message = TextSendMessage(text='Hello, world')
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
