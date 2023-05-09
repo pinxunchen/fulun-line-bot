@@ -150,7 +150,7 @@ def handle_message(event):
                         {
                           "type": "text",
                           "text": "爬梯機相關文件",
-                          "size": "xxl",
+                          "size": "xl",
                           "weight": "bold",
                           "contents": [],
                           "offsetStart": "md",
