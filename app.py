@@ -129,13 +129,7 @@ def handle_message(event):
 )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
-@handler.add(MessageEvent, message=TextMessage)  
-def handle_message(event):
-    if event.message.text == "常見問題":
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text="123")
-        )
+
 
 
 # 設定 Webhook 路由，接收 Line 平台發送的事件
