@@ -14,7 +14,7 @@ def handle_message(event):
     # 如果接收到的訊息是「我要預約」，則回覆一個 FlexMessage
     if event.message.text == '我要預約':
         flex_message = FlexSendMessage(
-            alt_text='訂車網址',
+            alt_text='我要預約',
             contents={"type": "bubble",
             "size": "kilo",
             "hero": {
@@ -131,7 +131,7 @@ def handle_message(event):
 
     if event.message.text == '文件下載':
         flex_message = FlexSendMessage(
-            alt_text='訂車網址',
+            alt_text='文件下載',
             contents={
                 "type": "carousel",
                 "contents": [
@@ -757,7 +757,7 @@ def handle_message(event):
 
     if event.message.text == '訂車查詢':
         flex_message = FlexSendMessage(
-            alt_text='訂車網址',
+            alt_text='訂車查詢',
             contents={
   "type": "bubble",
   "size": "kilo",
