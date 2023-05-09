@@ -129,7 +129,8 @@ def handle_message(event):
                 )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
-
+    if event.message.text == "常見問題":
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="123"))    
 
 
 
@@ -147,13 +148,15 @@ def webhook():
         return 'Error'
     return 'OK'
 
+
 # 設定處理用戶訊息的路由
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message_event(event):
     handle_message(event)
-      if event.message.text == '常見問題2':
-        message2 = TextSendMessage(text="測試123456") 
-        line_bot_api.reply_message(event.reply_token,message2)
+
+
+
+
 
 if __name__ == '__main__':
     app.run()
