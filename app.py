@@ -143,6 +143,12 @@ def handle_message(event):
         "layout": "vertical",
         "contents": [
           {
+            "type": "image",
+            "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/document.png",
+            "size": "lg",
+            "margin": "md"
+          },
+          {
             "type": "text",
             "text": "爬梯機相關文件",
             "size": "xxl",
@@ -193,67 +199,12 @@ def handle_message(event):
                 "text": "首次切結書",
                 "size": "lg",
                 "align": "center"
-              },
-              {
-                "type": "separator",
-                "color": "#BEBEBE",
-                "margin": "md"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "size": "lg",
-                    "align": "center",
-                    "text": "輔具購買證明"
-                  },
-                  {
-                    "type": "separator",
-                    "margin": "md",
-                    "color": "#BEBEBE"
-                  },
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "租賃紀錄表 (履帶)",
-                        "size": "lg",
-                        "align": "center"
-                      },
-                      {
-                        "type": "separator",
-                        "margin": "md",
-                        "color": "#BEBEBE"
-                      },
-                      {
-                        "type": "box",
-                        "layout": "vertical",
-                        "contents": [
-                          {
-                            "type": "text",
-                            "text": "租賃紀錄表 (撐桿)",
-                            "size": "lg",
-                            "align": "center"
-                          }
-                        ],
-                        "margin": "md",
-                        "paddingTop": "sm"
-                      }
-                    ],
-                    "paddingTop": "lg"
-                  }
-                ],
-                "paddingTop": "lg"
               }
             ],
             "paddingTop": "lg"
           }
         ],
-        "paddingTop": "md"
+        "paddingTop": "lg"
       }
     },
     {
@@ -266,7 +217,6 @@ def handle_message(event):
             "type": "text",
             "text": "新北長照文件",
             "size": "xl",
-            "weight": "bold",
             "contents": [
               {
                 "type": "span",
@@ -281,7 +231,8 @@ def handle_message(event):
             ],
             "offsetStart": "lg",
             "margin": "xl",
-            "offsetBottom": "sm"
+            "offsetBottom": "sm",
+            "weight": "bold"
           },
           {
             "type": "text",
@@ -473,7 +424,7 @@ def handle_message(event):
                     "type": "text",
                     "size": "lg",
                     "align": "center",
-                    "text": "核可編號範例"
+                    "text": "租賃紀錄表"
                   },
                   {
                     "type": "separator",
@@ -488,12 +439,7 @@ def handle_message(event):
                         "type": "text",
                         "size": "lg",
                         "align": "center",
-                        "text": "台北爬梯機 DM",
-                        "action": {
-                          "type": "message",
-                          "label": "action",
-                          "text": "台北爬梯DM"
-                        }
+                        "text": "購買證明"
                       },
                       {
                         "type": "separator",
@@ -508,11 +454,11 @@ def handle_message(event):
                             "type": "text",
                             "size": "lg",
                             "align": "center",
-                            "text": "預留",
+                            "text": "台北爬梯機DM",
                             "action": {
                               "type": "message",
                               "label": "action",
-                              "text": "核可編號範例"
+                              "text": "台北爬梯機DM"
                             }
                           }
                         ],
