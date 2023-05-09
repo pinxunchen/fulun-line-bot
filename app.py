@@ -9,9 +9,7 @@ line_bot_api = LineBotApi('mlQ7oqRMEbtzdaO0lG6BmHe2TxMyNv/nEn75lwpOZE0HR3W+nMB8P
 handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
 # 定義處理用戶訊息的函數
-@handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-  text = event.message.text
     
     # 如果接收到的訊息是「我想預約」，則回覆一個 FlexMessage
     if event.message.text == '我想預約':
@@ -115,7 +113,7 @@ def handle_message(event):
                 "action": {
                 "type": "uri",
                 "label": "action",
-                "uri": "http://linecorp.com/"
+                "uri": "https://github.com/pinxunchen/fulun-line-bot/raw/master/%E9%A6%96%E6%AC%A1%E5%88%87%E7%B5%90%E6%9B%B8.pdf"
               }
                                   }
                                 ]
@@ -128,15 +126,16 @@ def handle_message(event):
                     ]
                   }
                 }
-                )
+)
         line_bot_api.reply_message(event.reply_token, flex_message)
 
-    if event.message.text == '常見問題':
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text="123"))    
-
-
-
-    
+@handler.add(MessageEvent, message=TextMessage)  
+def handle_message(event):
+    if event.message.text == "常見問題":
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="123")
+        )
 
 
 # 設定 Webhook 路由，接收 Line 平台發送的事件
@@ -150,15 +149,10 @@ def webhook():
         return 'Error'
     return 'OK'
 
-
 # 設定處理用戶訊息的路由
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message_event(event):
     handle_message(event)
-
-
-
-
 
 if __name__ == '__main__':
     app.run()
