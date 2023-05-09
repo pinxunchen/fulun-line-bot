@@ -9,6 +9,7 @@ line_bot_api = LineBotApi('mlQ7oqRMEbtzdaO0lG6BmHe2TxMyNv/nEn75lwpOZE0HR3W+nMB8P
 handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
 # 定義處理用戶訊息的函數
+@handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     
     # 如果接收到的訊息是「我想預約」，則回覆一個 FlexMessage
