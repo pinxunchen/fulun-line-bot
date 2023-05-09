@@ -143,7 +143,7 @@ def handle_message(event):
                       "contents": [
                         {
                           "type": "image",
-                          "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/document.png",
+                          "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/document.png",
                           "size": "lg",
                           "margin": "md"
                         },
