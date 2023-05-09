@@ -10,7 +10,7 @@ handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
 # 定義處理用戶訊息的函數
 def handle_message(event):
-    
+
     # 如果接收到的訊息是「我想預約」，則回覆一個 FlexMessage
     if event.message.text == '我想預約':
         flex_message = FlexSendMessage(
@@ -126,7 +126,301 @@ def handle_message(event):
                     ]
                   }
                 }
-)
+       )
+        line_bot_api.reply_message(event.reply_token, flex_message)
+
+
+    if event.message.text == '我想預約':
+        flex_message = FlexSendMessage(
+            alt_text='訂車網址',
+            contents={
+              "type": "carousel",
+              "contents": [
+                {
+                  "type": "bubble",
+                  "hero": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "爬梯機相關文件",
+                        "size": "xl",
+                        "weight": "bold",
+                        "contents": [],
+                        "offsetStart": "lg",
+                        "margin": "xl",
+                        "offsetBottom": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "點擊下方選單可下載文件",
+                        "offsetStart": "lg",
+                        "offsetBottom": "sm",
+                        "size": "md",
+                        "color": "#1E90FF",
+                        "weight": "bold"
+                      },
+                      {
+                        "type": "separator",
+                        "margin": "md",
+                        "color": "#8B4513"
+                      }
+                    ],
+                    "paddingAll": "md"
+                  },
+                  "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "福倫小簽單",
+                        "size": "lg",
+                        "align": "center"
+                      },
+                      {
+                        "type": "separator",
+                        "color": "#BEBEBE",
+                        "margin": "md"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "首次切結書",
+                            "size": "lg",
+                            "align": "center"
+                          },
+                          {
+                            "type": "separator",
+                            "color": "#BEBEBE",
+                            "margin": "md"
+                          },
+                          {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                              {
+                                "type": "text",
+                                "text": "台北爬梯 DM",
+                                "size": "lg",
+                                "action": {
+                                  "type": "message",
+                                  "label": "action",
+                                  "text": "台北爬梯"
+                                },
+                                "align": "center"
+                              },
+                              {
+                                "type": "separator",
+                                "margin": "md",
+                                "color": "#BEBEBE"
+                              },
+                              {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                  {
+                                    "type": "text",
+                                    "text": "新北爬梯 DM",
+                                    "size": "lg",
+                                    "action": {
+                                      "type": "message",
+                                      "label": "action",
+                                      "text": "新北爬梯"
+                                    },
+                                    "align": "center"
+                                  },
+                                  {
+                                    "type": "separator",
+                                    "margin": "md",
+                                    "color": "#BEBEBE"
+                                  },
+                                  {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "contents": [
+                                      {
+                                        "type": "text",
+                                        "text": "桃園爬梯 DM",
+                                        "size": "lg",
+                                        "action": {
+                                          "type": "message",
+                                          "label": "action",
+                                          "text": "桃園爬梯"
+                                        },
+                                        "align": "center"
+                                      },
+                                      {
+                                        "type": "separator",
+                                        "margin": "md",
+                                        "color": "#BEBEBE"
+                                      },
+                                      {
+                                        "type": "box",
+                                        "layout": "vertical",
+                                        "contents": [
+                                          {
+                                            "type": "text",
+                                            "text": "基隆爬梯 DM",
+                                            "size": "lg",
+                                            "action": {
+                                              "type": "message",
+                                              "label": "action",
+                                              "text": "基隆爬梯"
+                                            },
+                                            "align": "center"
+                                          }
+                                        ],
+                                        "paddingTop": "lg"
+                                      }
+                                    ],
+                                    "margin": "md",
+                                    "paddingTop": "sm"
+                                  }
+                                ],
+                                "paddingTop": "lg"
+                              }
+                            ],
+                            "paddingTop": "lg"
+                          }
+                        ],
+                        "paddingTop": "lg"
+                      }
+                    ],
+                    "paddingTop": "md"
+                  }
+                },
+                {
+                  "type": "bubble",
+                  "hero": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "台北長照文件",
+                        "size": "xl",
+                        "weight": "bold",
+                        "contents": [],
+                        "offsetStart": "lg",
+                        "margin": "xl",
+                        "offsetBottom": "sm"
+                      },
+                      {
+                        "type": "text",
+                        "text": "點擊下方選單可下載文件",
+                        "offsetStart": "lg",
+                        "offsetBottom": "sm",
+                        "size": "md",
+                        "color": "#1E90FF",
+                        "weight": "bold"
+                      },
+                      {
+                        "type": "separator",
+                        "margin": "md",
+                        "color": "#8B4513"
+                      }
+                    ],
+                    "paddingAll": "md"
+                  },
+                  "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "交通出勤表",
+                        "size": "lg",
+                        "align": "center"
+                      },
+                      {
+                        "type": "separator",
+                        "color": "#BEBEBE",
+                        "margin": "md"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "收據黏貼表",
+                            "size": "lg",
+                            "align": "center"
+                          },
+                          {
+                            "type": "separator",
+                            "color": "#BEBEBE",
+                            "margin": "md"
+                          },
+                          {
+                            "type": "box",
+                            "layout": "vertical",
+                            "contents": [
+                              {
+                                "type": "text",
+                                "size": "lg",
+                                "align": "center",
+                                "text": "購買證明"
+                              },
+                              {
+                                "type": "separator",
+                                "margin": "md"
+                              },
+                              {
+                                "type": "box",
+                                "layout": "vertical",
+                                "contents": [
+                                  {
+                                    "type": "text",
+                                    "size": "lg",
+                                    "align": "center",
+                                    "text": "租賃紀錄表"
+                                  },
+                                  {
+                                    "type": "separator",
+                                    "color": "#BEBEBE",
+                                    "margin": "md"
+                                  },
+                                  {
+                                    "type": "box",
+                                    "layout": "vertical",
+                                    "contents": [
+                                      {
+                                        "type": "text",
+                                        "size": "lg",
+                                        "align": "center",
+                                        "text": "核可編號範例",
+                                        "action": {
+                                          "type": "message",
+                                          "label": "action",
+                                          "text": "核可編號範例"
+                                        }
+                                      }
+                                    ],
+                                    "paddingTop": "lg"
+                                  }
+                                ],
+                                "paddingTop": "lg"
+                              }
+                            ],
+                            "paddingTop": "lg"
+                          }
+                        ],
+                        "paddingTop": "lg"
+                      }
+                    ],
+                    "paddingTop": "xxl"
+                  }
+                }
+              ]
+            }
+
+            )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
@@ -142,6 +436,8 @@ def webhook():
     except:
         return 'Error'
     return 'OK'
+
+
 
 # 設定處理用戶訊息的路由
 @handler.add(MessageEvent, message=TextMessage)
