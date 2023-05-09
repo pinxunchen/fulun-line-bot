@@ -129,7 +129,6 @@ def handle_message(event):
        )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
-
     if event.message.text == '文件下載':
         flex_message = FlexSendMessage(
             alt_text='訂車網址',
@@ -756,6 +755,110 @@ def handle_message(event):
             )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
+    if event.message.text == '訂車查詢':
+        flex_message = FlexSendMessage(
+            alt_text='訂車網址',
+            contents={
+  "type": "bubble",
+  "size": "kilo",
+  "hero": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "image",
+        "size": "lg",
+        "aspectMode": "cover",
+        "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/conclusion.png",
+        "margin": "xl",
+        "offsetStart": "md"
+      },
+      {
+        "type": "text",
+        "text": "訂車查詢",
+        "size": "lg",
+        "weight": "bold",
+        "margin": "none",
+        "offsetTop": "md",
+        "contents": [],
+        "offsetStart": "lg"
+      },
+      {
+        "type": "text",
+        "text": "查詢紀錄以及個案長照資格",
+        "size": "sm",
+        "color": "#1E90FF",
+        "offsetTop": "md",
+        "offsetStart": "lg",
+        "weight": "bold"
+      },
+      {
+        "type": "separator",
+        "margin": "xl",
+        "color": "#BEBEBF"
+      }
+    ]
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "我的趟次",
+        "size": "md",
+        "align": "center",
+        "margin": "lg",
+        "offsetBottom": "md"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "separator",
+            "margin": "lg",
+            "color": "#BEBEBE"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "歷史紀錄",
+                "size": "md",
+                "align": "center",
+                "margin": "xxl"
+              },
+              {
+                "type": "separator",
+                "margin": "lg",
+                "color": "#BEBEBE"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "長照資格查詢",
+                    "margin": "xxl",
+                    "size": "md",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "offsetBottom": "md"
+      }
+    ]
+  }
+}
+       )
+        line_bot_api.reply_message(event.reply_token, flex_message)
 
 
 
