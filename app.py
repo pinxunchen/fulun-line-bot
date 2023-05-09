@@ -11,6 +11,7 @@ handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 # 定義處理用戶訊息的函數
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+  text = event.message.text
     
     # 如果接收到的訊息是「我想預約」，則回覆一個 FlexMessage
     if event.message.text == '我想預約':
@@ -130,7 +131,7 @@ def handle_message(event):
                 )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
-    if event.message.text == "常見問題":
+    if event.message.text == '常見問題':
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text="123"))    
 
 
