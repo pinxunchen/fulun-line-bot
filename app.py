@@ -134,50 +134,231 @@ def handle_message(event):
         flex_message = FlexSendMessage(
             alt_text='訂車網址',
             contents={
-              "type": "carousel",
-              "contents": [
-                {
-                  "type": "bubble",
-                  "hero": {
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "爬梯機相關文件",
+            "size": "xxl",
+            "weight": "bold",
+            "contents": [],
+            "offsetStart": "lg",
+            "margin": "xl",
+            "offsetBottom": "sm"
+          },
+          {
+            "type": "text",
+            "text": "點擊下方選單可下載文件",
+            "offsetStart": "lg",
+            "offsetBottom": "sm",
+            "size": "md",
+            "color": "#1E90FF",
+            "weight": "bold"
+          },
+          {
+            "type": "separator",
+            "margin": "md",
+            "color": "#8B4513"
+          }
+        ],
+        "paddingAll": "md"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "福倫小簽單",
+            "size": "lg",
+            "align": "center"
+          },
+          {
+            "type": "separator",
+            "color": "#BEBEBE",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "首次切結書",
+                "size": "lg",
+                "align": "center"
+              },
+              {
+                "type": "separator",
+                "color": "#BEBEBE",
+                "margin": "md"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "size": "lg",
+                    "align": "center",
+                    "text": "輔具購買證明"
+                  },
+                  {
+                    "type": "separator",
+                    "margin": "md",
+                    "color": "#BEBEBE"
+                  },
+                  {
                     "type": "box",
                     "layout": "vertical",
                     "contents": [
                       {
                         "type": "text",
-                        "text": "爬梯機相關文件",
-                        "size": "xl",
-                        "weight": "bold",
-                        "contents": [],
-                        "offsetStart": "lg",
-                        "margin": "xl",
-                        "offsetBottom": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "點擊下方選單可下載文件",
-                        "offsetStart": "lg",
-                        "offsetBottom": "sm",
-                        "size": "md",
-                        "color": "#1E90FF",
-                        "weight": "bold"
+                        "text": "租賃紀錄表 (履帶)",
+                        "size": "lg",
+                        "align": "center"
                       },
                       {
                         "type": "separator",
                         "margin": "md",
-                        "color": "#8B4513"
+                        "color": "#BEBEBE"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "租賃紀錄表 (撐桿)",
+                            "size": "lg",
+                            "align": "center"
+                          }
+                        ],
+                        "margin": "md",
+                        "paddingTop": "sm"
                       }
                     ],
-                    "paddingAll": "md"
+                    "paddingTop": "lg"
+                  }
+                ],
+                "paddingTop": "lg"
+              }
+            ],
+            "paddingTop": "lg"
+          }
+        ],
+        "paddingTop": "md"
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "新北長照文件",
+            "size": "xl",
+            "weight": "bold",
+            "contents": [
+              {
+                "type": "span",
+                "text": "新北",
+                "size": "xxl",
+                "color": "#E680FF"
+              },
+              {
+                "type": "span",
+                "text": "  爬梯機文件"
+              }
+            ],
+            "offsetStart": "lg",
+            "margin": "xl",
+            "offsetBottom": "sm"
+          },
+          {
+            "type": "text",
+            "text": "點擊下方選單可下載文件",
+            "offsetStart": "lg",
+            "offsetBottom": "sm",
+            "size": "md",
+            "color": "#1E90FF",
+            "weight": "bold"
+          },
+          {
+            "type": "separator",
+            "margin": "md",
+            "color": "#8B4513"
+          }
+        ],
+        "paddingAll": "md"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "請款表電子檔下載",
+            "size": "lg",
+            "align": "center"
+          },
+          {
+            "type": "separator",
+            "color": "#BEBEBE",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "請款表範例",
+                "size": "lg",
+                "align": "center"
+              },
+              {
+                "type": "separator",
+                "color": "#BEBEBE",
+                "margin": "md"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "size": "lg",
+                    "align": "center",
+                    "text": "新北爬梯機DM",
+                    "action": {
+                      "type": "message",
+                      "label": "action",
+                      "text": "新北爬梯機DM"
+                    }
                   },
-                  "body": {
+                  {
+                    "type": "separator",
+                    "margin": "md",
+                    "color": "#BEBEBE"
+                  },
+                  {
                     "type": "box",
                     "layout": "vertical",
                     "contents": [
                       {
                         "type": "text",
-                        "text": "福倫小簽單",
                         "size": "lg",
-                        "align": "center"
+                        "align": "center",
+                        "text": "預留"
                       },
                       {
                         "type": "separator",
@@ -190,152 +371,129 @@ def handle_message(event):
                         "contents": [
                           {
                             "type": "text",
-                            "text": "首次切結書",
                             "size": "lg",
-                            "align": "center"
-                          },
-                          {
-                            "type": "separator",
-                            "color": "#BEBEBE",
-                            "margin": "md"
-                          },
-                          {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                              {
-                                "type": "text",
-                                "text": "台北爬梯 DM",
-                                "size": "lg",
-                                "action": {
-                                  "type": "message",
-                                  "label": "action",
-                                  "text": "台北爬梯"
-                                },
-                                "align": "center"
-                              },
-                              {
-                                "type": "separator",
-                                "margin": "md",
-                                "color": "#BEBEBE"
-                              },
-                              {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
-                                  {
-                                    "type": "text",
-                                    "text": "新北爬梯 DM",
-                                    "size": "lg",
-                                    "action": {
-                                      "type": "message",
-                                      "label": "action",
-                                      "text": "新北爬梯"
-                                    },
-                                    "align": "center"
-                                  },
-                                  {
-                                    "type": "separator",
-                                    "margin": "md",
-                                    "color": "#BEBEBE"
-                                  },
-                                  {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "contents": [
-                                      {
-                                        "type": "text",
-                                        "text": "桃園爬梯 DM",
-                                        "size": "lg",
-                                        "action": {
-                                          "type": "message",
-                                          "label": "action",
-                                          "text": "桃園爬梯"
-                                        },
-                                        "align": "center"
-                                      },
-                                      {
-                                        "type": "separator",
-                                        "margin": "md",
-                                        "color": "#BEBEBE"
-                                      },
-                                      {
-                                        "type": "box",
-                                        "layout": "vertical",
-                                        "contents": [
-                                          {
-                                            "type": "text",
-                                            "text": "基隆爬梯 DM",
-                                            "size": "lg",
-                                            "action": {
-                                              "type": "message",
-                                              "label": "action",
-                                              "text": "基隆爬梯"
-                                            },
-                                            "align": "center"
-                                          }
-                                        ],
-                                        "paddingTop": "lg"
-                                      }
-                                    ],
-                                    "margin": "md",
-                                    "paddingTop": "sm"
-                                  }
-                                ],
-                                "paddingTop": "lg"
-                              }
-                            ],
-                            "paddingTop": "lg"
+                            "align": "center",
+                            "text": "預留"
                           }
                         ],
                         "paddingTop": "lg"
                       }
                     ],
-                    "paddingTop": "md"
+                    "paddingTop": "lg"
                   }
-                },
-                {
-                  "type": "bubble",
-                  "hero": {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "text": "台北長照文件",
-                        "size": "xl",
-                        "weight": "bold",
-                        "contents": [],
-                        "offsetStart": "lg",
-                        "margin": "xl",
-                        "offsetBottom": "sm"
-                      },
-                      {
-                        "type": "text",
-                        "text": "點擊下方選單可下載文件",
-                        "offsetStart": "lg",
-                        "offsetBottom": "sm",
-                        "size": "md",
-                        "color": "#1E90FF",
-                        "weight": "bold"
-                      },
-                      {
-                        "type": "separator",
-                        "margin": "md",
-                        "color": "#8B4513"
-                      }
-                    ],
-                    "paddingAll": "md"
+                ],
+                "paddingTop": "lg"
+              }
+            ],
+            "paddingTop": "lg"
+          }
+        ],
+        "paddingTop": "lg"
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "台北長照文件",
+            "size": "xl",
+            "weight": "bold",
+            "contents": [
+              {
+                "type": "span",
+                "text": "台北",
+                "size": "xxl",
+                "color": "#FFCC00"
+              },
+              {
+                "type": "span",
+                "text": "  爬梯機文件"
+              }
+            ],
+            "offsetStart": "lg",
+            "margin": "xl",
+            "offsetBottom": "sm"
+          },
+          {
+            "type": "text",
+            "text": "點擊下方選單可下載文件",
+            "offsetStart": "lg",
+            "offsetBottom": "sm",
+            "size": "md",
+            "color": "#1E90FF",
+            "weight": "bold"
+          },
+          {
+            "type": "separator",
+            "margin": "md",
+            "color": "#8B4513"
+          }
+        ],
+        "paddingAll": "md"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "交通出勤報表",
+            "size": "lg",
+            "align": "center"
+          },
+          {
+            "type": "separator",
+            "color": "#BEBEBE",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "收據黏貼表",
+                "size": "lg",
+                "align": "center"
+              },
+              {
+                "type": "separator",
+                "color": "#BEBEBE",
+                "margin": "md"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "size": "lg",
+                    "align": "center",
+                    "text": "核可編號範例"
                   },
-                  "body": {
+                  {
+                    "type": "separator",
+                    "margin": "md",
+                    "color": "#BEBEBE"
+                  },
+                  {
                     "type": "box",
                     "layout": "vertical",
                     "contents": [
                       {
                         "type": "text",
-                        "text": "交通出勤表",
                         "size": "lg",
-                        "align": "center"
+                        "align": "center",
+                        "text": "台北爬梯機 DM",
+                        "action": {
+                          "type": "message",
+                          "label": "action",
+                          "text": "台北爬梯DM"
+                        }
                       },
                       {
                         "type": "separator",
@@ -348,77 +506,305 @@ def handle_message(event):
                         "contents": [
                           {
                             "type": "text",
-                            "text": "收據黏貼表",
                             "size": "lg",
-                            "align": "center"
-                          },
-                          {
-                            "type": "separator",
-                            "color": "#BEBEBE",
-                            "margin": "md"
-                          },
-                          {
-                            "type": "box",
-                            "layout": "vertical",
-                            "contents": [
-                              {
-                                "type": "text",
-                                "size": "lg",
-                                "align": "center",
-                                "text": "購買證明"
-                              },
-                              {
-                                "type": "separator",
-                                "margin": "md"
-                              },
-                              {
-                                "type": "box",
-                                "layout": "vertical",
-                                "contents": [
-                                  {
-                                    "type": "text",
-                                    "size": "lg",
-                                    "align": "center",
-                                    "text": "租賃紀錄表"
-                                  },
-                                  {
-                                    "type": "separator",
-                                    "color": "#BEBEBE",
-                                    "margin": "md"
-                                  },
-                                  {
-                                    "type": "box",
-                                    "layout": "vertical",
-                                    "contents": [
-                                      {
-                                        "type": "text",
-                                        "size": "lg",
-                                        "align": "center",
-                                        "text": "核可編號範例",
-                                        "action": {
-                                          "type": "message",
-                                          "label": "action",
-                                          "text": "核可編號範例"
-                                        }
-                                      }
-                                    ],
-                                    "paddingTop": "lg"
-                                  }
-                                ],
-                                "paddingTop": "lg"
-                              }
-                            ],
-                            "paddingTop": "lg"
+                            "align": "center",
+                            "text": "預留",
+                            "action": {
+                              "type": "message",
+                              "label": "action",
+                              "text": "核可編號範例"
+                            }
                           }
                         ],
                         "paddingTop": "lg"
                       }
                     ],
-                    "paddingTop": "xxl"
+                    "paddingTop": "lg"
                   }
-                }
-              ]
-            }
+                ],
+                "paddingTop": "lg"
+              }
+            ],
+            "paddingTop": "lg"
+          }
+        ],
+        "paddingTop": "lg"
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "桃園爬梯機相關文件",
+            "size": "xl",
+            "weight": "bold",
+            "contents": [
+              {
+                "type": "span",
+                "text": "桃園",
+                "size": "xxl",
+                "color": "#A52A2A"
+              },
+              {
+                "type": "span",
+                "text": "  爬梯機文件"
+              }
+            ],
+            "offsetStart": "lg",
+            "margin": "xl",
+            "offsetBottom": "sm"
+          },
+          {
+            "type": "text",
+            "text": "點擊下方選單可下載文件",
+            "offsetStart": "lg",
+            "offsetBottom": "sm",
+            "size": "md",
+            "color": "#1E90FF",
+            "weight": "bold"
+          },
+          {
+            "type": "separator",
+            "margin": "md",
+            "color": "#8B4513"
+          }
+        ],
+        "paddingAll": "md"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "服務租賃請款表",
+            "size": "lg",
+            "align": "center"
+          },
+          {
+            "type": "separator",
+            "color": "#BEBEBE",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "租賃紀錄表",
+                "size": "lg",
+                "align": "center"
+              },
+              {
+                "type": "separator",
+                "color": "#BEBEBE",
+                "margin": "md"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "size": "lg",
+                    "align": "center",
+                    "text": "長照輔具租賃領據"
+                  },
+                  {
+                    "type": "separator",
+                    "margin": "md",
+                    "color": "#BEBEBE"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "報告書範例",
+                        "size": "lg",
+                        "align": "center"
+                      },
+                      {
+                        "type": "separator",
+                        "margin": "md",
+                        "color": "#BEBEBE"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "桃園爬梯機 DM",
+                            "size": "lg",
+                            "align": "center",
+                            "action": {
+                              "type": "message",
+                              "label": "action",
+                              "text": "桃園爬梯機DM"
+                            }
+                          }
+                        ],
+                        "margin": "md",
+                        "paddingTop": "sm"
+                      }
+                    ],
+                    "paddingTop": "lg"
+                  }
+                ],
+                "paddingTop": "lg"
+              }
+            ],
+            "paddingTop": "lg"
+          }
+        ],
+        "paddingTop": "md"
+      }
+    },
+    {
+      "type": "bubble",
+      "hero": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "桃園爬梯機相關文件",
+            "size": "xl",
+            "weight": "bold",
+            "contents": [
+              {
+                "type": "span",
+                "text": "基隆",
+                "size": "xxl",
+                "color": "#FF4D00"
+              },
+              {
+                "type": "span",
+                "text": "  爬梯機文件"
+              }
+            ],
+            "offsetStart": "lg",
+            "margin": "xl",
+            "offsetBottom": "sm"
+          },
+          {
+            "type": "text",
+            "text": "點擊下方選單可下載文件",
+            "offsetStart": "lg",
+            "offsetBottom": "sm",
+            "size": "md",
+            "color": "#1E90FF",
+            "weight": "bold"
+          },
+          {
+            "type": "separator",
+            "margin": "md",
+            "color": "#8B4513"
+          }
+        ],
+        "paddingAll": "md"
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "服務租賃紀錄表",
+            "size": "lg",
+            "align": "center"
+          },
+          {
+            "type": "separator",
+            "color": "#BEBEBE",
+            "margin": "md"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "輔具購買補助證明",
+                "size": "lg",
+                "align": "center"
+              },
+              {
+                "type": "separator",
+                "color": "#BEBEBE",
+                "margin": "md"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "size": "lg",
+                    "align": "center",
+                    "text": "個案契約書"
+                  },
+                  {
+                    "type": "separator",
+                    "margin": "md",
+                    "color": "#BEBEBE"
+                  },
+                  {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "text": "輔具照片",
+                        "size": "lg",
+                        "align": "center"
+                      },
+                      {
+                        "type": "separator",
+                        "margin": "md",
+                        "color": "#BEBEBE"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "text",
+                            "text": "基隆爬梯機 DM",
+                            "size": "lg",
+                            "align": "center",
+                            "action": {
+                              "type": "message",
+                              "label": "action",
+                              "text": "基隆爬梯機DM"
+                            }
+                          }
+                        ],
+                        "margin": "md",
+                        "paddingTop": "sm"
+                      }
+                    ],
+                    "paddingTop": "lg"
+                  }
+                ],
+                "paddingTop": "lg"
+              }
+            ],
+            "paddingTop": "lg"
+          }
+        ],
+        "paddingTop": "md"
+      }
+    }
+  ]
+}
 
             )
         line_bot_api.reply_message(event.reply_token, flex_message)
