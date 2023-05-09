@@ -130,9 +130,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
-    if event.message.text == '常見問題2':
-      message2 = TextSendMessage(text="測試123456") 
-      line_bot_api.reply_message(event.reply_token,message2)
+
 
 
     
@@ -153,6 +151,9 @@ def webhook():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message_event(event):
     handle_message(event)
+      if event.message.text == '常見問題2':
+        message2 = TextSendMessage(text="測試123456") 
+        line_bot_api.reply_message(event.reply_token,message2)
 
 if __name__ == '__main__':
     app.run()
