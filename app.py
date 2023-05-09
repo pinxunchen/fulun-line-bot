@@ -144,7 +144,7 @@ def handle_message(event):
         "contents": [
           {
             "type": "image",
-            "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/document.png",
+            "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/document.png",
             "size": "lg",
             "margin": "md"
           },
@@ -154,9 +154,9 @@ def handle_message(event):
             "size": "xxl",
             "weight": "bold",
             "contents": [],
-            "offsetStart": "lg",
+            "offsetStart": "md",
             "margin": "xl",
-            "offsetBottom": "sm"
+            "offsetBottom": "lg"
           },
           {
             "type": "text",
@@ -222,7 +222,7 @@ def handle_message(event):
                 "type": "span",
                 "text": "新北",
                 "size": "xxl",
-                "color": "#E680FF"
+                "color": "#9400D3"
               },
               {
                 "type": "span",
@@ -274,7 +274,8 @@ def handle_message(event):
                 "type": "text",
                 "text": "請款表範例",
                 "size": "lg",
-                "align": "center"
+                "align": "center",
+                "weight": "regular"
               },
               {
                 "type": "separator",
@@ -358,7 +359,7 @@ def handle_message(event):
                 "type": "span",
                 "text": "台北",
                 "size": "xxl",
-                "color": "#FFCC00"
+                "color": "#FF9900"
               },
               {
                 "type": "span",
