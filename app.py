@@ -1,37 +1,12 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
 from linebot.models import MessageEvent, TextMessage, FlexSendMessage
-from line_notify import LineNotify
-from linebot.exceptions import LineBotApiError
 
 app = Flask(__name__)
 
 # 設定 Channel Access Token 和 Channel Secret
 line_bot_api = LineBotApi('mlQ7oqRMEbtzdaO0lG6BmHe2TxMyNv/nEn75lwpOZE0HR3W+nMB8PjBbrhlqOO5Ic7nie1aVaZZAjbDL4MJsz2jo+cMuPs2v/up2vmoIqv7RBxEx8VR9456FmZqjNc5k5I5j/Cwn3OzbLS5CT+4/BAdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
-notify = LineNotify(access_token='JEiIeAREDdKodTpVFc219il9hsNqy7WVQFO0NVXjkSQ')
-
-PDF_URL = 'https://github.com/pinxunchen/fulun-line-bot/blob/master/%E9%A6%96%E6%AC%A1%E5%88%87%E7%B5%90%E6%9B%B8.pdf'
-
-def send_pdf_to_line_chat(pdf_url, room_id):
-    try:
-        # 使用Line Notify服務發送PDF檔案到Line聊天室
-        notify.send(message=pdf_url, image_thumbnail=pdf_url, image_fullsize=pdf_url, sticker_package_id=1, sticker_id=13, notification_disabled=True)
-
-        # 發送通知消息，提醒用戶檔案已發送
-        line_bot_api.push_message(room_id, TextSendMessage(text='PDF檔案已發送'))
-
-    except LineBotApiError as e:
-        print(e)
-
-# 處理Line chat bot收到的消息
-@handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-    user_message = event.message.text
-    if user_message == 'pdf':
-        send_pdf_to_line_chat(PDF_URL, event.source.room_id)
-
-
 
 # 定義處理用戶訊息的函數
 def handle_message(event):
@@ -784,109 +759,106 @@ def handle_message(event):
         flex_message = FlexSendMessage(
             alt_text='訂車查詢',
             contents={
-            "type": "bubble",
-            "size": "kilo",
-            "hero": {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "image",
-                  "size": "lg",
-                  "aspectMode": "cover",
-                  "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/conclusion.png",
-                  "margin": "xl",
-                  "offsetStart": "md"
-                },
-                {
-                  "type": "text",
-                  "text": "訂車查詢",
-                  "size": "xl",
-                  "weight": "bold",
-                  "margin": "none",
-                  "offsetTop": "md",
-                  "contents": [],
-                  "offsetStart": "lg"
-                },
-                {
-                  "type": "text",
-                  "text": "查詢紀錄以及個案長照資格",
-                  "size": "sm",
-                  "color": "#1E90FF",
-                  "offsetTop": "md",
-                  "offsetStart": "lg",
-                  "weight": "bold"
-                },
-                {
-                  "type": "separator",
-                  "margin": "xl",
-                  "color": "#BEBEBF"
-                }
-              ]
-            },
-            "body": {
-              "type": "box",
-              "layout": "vertical",
-              "contents": [
-                {
-                  "type": "text",
-                  "text": "我的趟次",
-                  "size": "md",
-                  "align": "center",
-                  "margin": "lg",
-                  "offsetBottom": "md"
-                },
-                {
-                  "type": "box",
-                  "layout": "vertical",
-                  "contents": [
-                    {
-                      "type": "separator",
-                      "margin": "lg",
-                      "color": "#BEBEBE"
-                    },
-                    {
-                      "type": "box",
-                      "layout": "vertical",
-                      "contents": [
-                        {
-                          "type": "text",
-                          "text": "歷史紀錄",
-                          "size": "md",
-                          "align": "center",
-                          "margin": "xxl"
-                        },
-                        {
-                          "type": "separator",
-                          "margin": "lg",
-                          "color": "#BEBEBE"
-                        },
-                        {
-                          "type": "box",
-                          "layout": "vertical",
-                          "contents": [
-                            {
-                              "type": "text",
-                              "text": "長照資格查詢",
-                              "margin": "xxl",
-                              "size": "md",
-                              "align": "center"
-                            }
-                          ]
-                        }
-                      ]
-                    }
-                  ],
-                  "offsetBottom": "md"
-                }
-              ]
-            }
+  "type": "bubble",
+  "size": "kilo",
+  "hero": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "image",
+        "size": "lg",
+        "aspectMode": "cover",
+        "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/conclusion.png",
+        "margin": "xl",
+        "offsetStart": "md"
+      },
+      {
+        "type": "text",
+        "text": "訂車查詢",
+        "size": "xl",
+        "weight": "bold",
+        "margin": "none",
+        "offsetTop": "md",
+        "contents": [],
+        "offsetStart": "lg"
+      },
+      {
+        "type": "text",
+        "text": "查詢紀錄以及個案長照資格",
+        "size": "sm",
+        "color": "#1E90FF",
+        "offsetTop": "md",
+        "offsetStart": "lg",
+        "weight": "bold"
+      },
+      {
+        "type": "separator",
+        "margin": "xl",
+        "color": "#BEBEBF"
+      }
+    ]
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "我的趟次",
+        "size": "md",
+        "align": "center",
+        "margin": "lg",
+        "offsetBottom": "md"
+      },
+      {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "separator",
+            "margin": "lg",
+            "color": "#BEBEBE"
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "歷史紀錄",
+                "size": "md",
+                "align": "center",
+                "margin": "xxl"
+              },
+              {
+                "type": "separator",
+                "margin": "lg",
+                "color": "#BEBEBE"
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "長照資格查詢",
+                    "margin": "xxl",
+                    "size": "md",
+                    "align": "center"
+                  }
+                ]
+              }
+            ]
           }
-                 )
+        ],
+        "offsetBottom": "md"
+      }
+    ]
+  }
+}
+       )
         line_bot_api.reply_message(event.reply_token, flex_message)
-
-
-
 
 
 
