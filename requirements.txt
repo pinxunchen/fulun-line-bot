@@ -1,3 +1,5 @@
 line-bot-sdk
 gunicorn
 flask
+pillow
+line-notify
