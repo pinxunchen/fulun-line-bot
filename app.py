@@ -11,7 +11,7 @@ handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 # 定義處理用戶訊息的函數
 def handle_message(event):
 
-    # 如果接收到的訊息是「我要預約」，則回覆一個 FlexMessage
+    # 如果接收到的訊息是「___」，則回覆一個 FlexMessage
     if event.message.text == '我要預約':
         flex_message = FlexSendMessage(
             alt_text='我要預約',
@@ -221,7 +221,7 @@ def handle_message(event):
                               "type": "span",
                               "text": "新北",
                               "size": "xxl",
-                              "color": "#8B00FF"
+                              "color": "#DA70D6"
                             },
                             {
                               "type": "span",
@@ -759,106 +759,367 @@ def handle_message(event):
         flex_message = FlexSendMessage(
             alt_text='訂車查詢',
             contents={
-  "type": "bubble",
-  "size": "kilo",
-  "hero": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "image",
-        "size": "lg",
-        "aspectMode": "cover",
-        "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/conclusion.png",
-        "margin": "xl",
-        "offsetStart": "md"
-      },
-      {
-        "type": "text",
-        "text": "訂車查詢",
-        "size": "xl",
-        "weight": "bold",
-        "margin": "none",
-        "offsetTop": "md",
-        "contents": [],
-        "offsetStart": "lg"
-      },
-      {
-        "type": "text",
-        "text": "查詢紀錄以及個案長照資格",
-        "size": "sm",
-        "color": "#1E90FF",
-        "offsetTop": "md",
-        "offsetStart": "lg",
-        "weight": "bold"
-      },
-      {
-        "type": "separator",
-        "margin": "xl",
-        "color": "#BEBEBF"
-      }
-    ]
-  },
-  "body": {
-    "type": "box",
-    "layout": "vertical",
-    "contents": [
-      {
-        "type": "text",
-        "text": "我的趟次",
-        "size": "md",
-        "align": "center",
-        "margin": "lg",
-        "offsetBottom": "md"
-      },
-      {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "separator",
-            "margin": "lg",
-            "color": "#BEBEBE"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "歷史紀錄",
-                "size": "md",
-                "align": "center",
-                "margin": "xxl"
-              },
-              {
-                "type": "separator",
-                "margin": "lg",
-                "color": "#BEBEBE"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "長照資格查詢",
-                    "margin": "xxl",
-                    "size": "md",
-                    "align": "center"
-                  }
-                ]
-              }
-            ]
+            "type": "bubble",
+            "size": "kilo",
+            "hero": {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "size": "lg",
+                  "aspectMode": "cover",
+                  "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/conclusion.png",
+                  "margin": "xl",
+                  "offsetStart": "md"
+                },
+                {
+                  "type": "text",
+                  "text": "訂車查詢",
+                  "size": "xl",
+                  "weight": "bold",
+                  "margin": "none",
+                  "offsetTop": "md",
+                  "contents": [],
+                  "offsetStart": "lg"
+                },
+                {
+                  "type": "text",
+                  "text": "查詢紀錄以及個案長照資格",
+                  "size": "sm",
+                  "color": "#1E90FF",
+                  "offsetTop": "md",
+                  "offsetStart": "lg",
+                  "weight": "bold"
+                },
+                {
+                  "type": "separator",
+                  "margin": "xl",
+                  "color": "#BEBEBF"
+                }
+              ]
+            },
+            "body": {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "我的趟次",
+                  "size": "md",
+                  "align": "center",
+                  "margin": "lg",
+                  "offsetBottom": "md"
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "separator",
+                      "margin": "lg",
+                      "color": "#BEBEBE"
+                    },
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "歷史紀錄",
+                          "size": "md",
+                          "align": "center",
+                          "margin": "xxl"
+                        },
+                        {
+                          "type": "separator",
+                          "margin": "lg",
+                          "color": "#BEBEBE"
+                        },
+                        {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "text": "長照資格查詢",
+                              "margin": "xxl",
+                              "size": "md",
+                              "align": "center"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "offsetBottom": "md"
+                }
+              ]
+            }
           }
-        ],
-        "offsetBottom": "md"
-      }
-    ]
-  }
-}
        )
         line_bot_api.reply_message(event.reply_token, flex_message)
+
+    if event.message.text == '輔具額度':
+        flex_message = FlexSendMessage(
+            alt_text='輔具額度',
+            contents={
+            "type": "bubble",
+            "size": "kilo",
+            "hero": {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "size": "lg",
+                  "aspectMode": "cover",
+                  "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/caculation11.png",
+                  "margin": "xl",
+                  "offsetStart": "xs"
+                },
+                {
+                  "type": "text",
+                  "text": "輔具額度相關",
+                  "size": "xl",
+                  "weight": "bold",
+                  "margin": "none",
+                  "offsetTop": "md",
+                  "contents": [],
+                  "offsetStart": "lg"
+                },
+                {
+                  "type": "text",
+                  "text": "查詢輔具預估剩餘額度及補收試算",
+                  "size": "sm",
+                  "color": "#1E90FF",
+                  "offsetTop": "md",
+                  "offsetStart": "lg",
+                  "weight": "bold"
+                },
+                {
+                  "type": "separator",
+                  "margin": "xl",
+                  "color": "#BEBEBF"
+                }
+              ]
+            },
+            "body": {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "餘額查詢",
+                  "size": "md",
+                  "align": "center",
+                  "margin": "lg",
+                  "offsetBottom": "md"
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "separator",
+                      "margin": "lg",
+                      "color": "#BEBEBE"
+                    },
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "補收試算",
+                          "size": "md",
+                          "align": "center",
+                          "margin": "xxl"
+                        },
+                        {
+                          "type": "separator",
+                          "margin": "lg",
+                          "color": "#BEBEBE"
+                        },
+                        {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "text": "待補收紀錄",
+                              "margin": "xxl",
+                              "size": "md",
+                              "align": "center"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "offsetBottom": "md"
+                }
+              ]
+            }
+          }
+
+            )
+
+    if event.message.text == 'LINE連結':
+      flex_message = FlexSendMessage(
+            alt_text='LINE連結',
+            contents={
+            "type": "bubble",
+            "size": "kilo",
+            "hero": {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "image",
+                      "size": "lg",
+                      "aspectMode": "cover",
+                      "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/line%20(1).png",
+                      "margin": "xl",
+                      "offsetStart": "xs"
+                    }
+                  ],
+                  "paddingAll": "lg"
+                },
+                {
+                  "type": "text",
+                  "text": "Line相關連結",
+                  "size": "xl",
+                  "weight": "bold",
+                  "margin": "none",
+                  "offsetTop": "md",
+                  "contents": [],
+                  "offsetStart": "lg"
+                },
+                {
+                  "type": "text",
+                  "text": "點擊下方可跳轉到該Line頁面",
+                  "size": "md",
+                  "color": "#1E90FF",
+                  "offsetTop": "md",
+                  "offsetStart": "lg",
+                  "weight": "bold"
+                },
+                {
+                  "type": "separator",
+                  "margin": "xl",
+                  "color": "#BEBEBF"
+                }
+              ]
+            },
+            "body": {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "台北爬梯機特約",
+                  "size": "md",
+                  "align": "center",
+                  "margin": "lg",
+                  "offsetBottom": "md",
+                  "action": {
+                    "type": "uri",
+                    "label": "action",
+                    "uri": "https://lin.ee/gYmP75J"
+                  }
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "separator",
+                      "margin": "lg",
+                      "color": "#BEBEBE"
+                    },
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "新北爬梯機特約",
+                          "size": "md",
+                          "align": "center",
+                          "margin": "xxl",
+                          "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/",
+                            "altUri": {
+                              "desktop": "https://lin.ee/F9sIMMq"
+                            }
+                          }
+                        },
+                        {
+                          "type": "separator",
+                          "margin": "lg",
+                          "color": "#BEBEBE"
+                        },
+                        {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "text": "桃園爬梯機特約",
+                              "margin": "xxl",
+                              "size": "md",
+                              "align": "center",
+                              "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": "https://lin.ee/m0VEwln"
+                              }
+                            },
+                            {
+                              "type": "box",
+                              "layout": "vertical",
+                              "contents": [
+                                {
+                                  "type": "separator",
+                                  "margin": "lg",
+                                  "color": "#BEBEBE"
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "基隆爬梯機特約",
+                                  "margin": "xxl",
+                                  "size": "md",
+                                  "align": "center",
+                                  "action": {
+                                    "type": "uri",
+                                    "label": "action",
+                                    "uri": "https://lin.ee/UhJHNZj"
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "offsetBottom": "sm"
+                        }
+                      ]
+                    }
+                  ],
+                  "offsetBottom": "md"
+                }
+              ],
+              "offsetTop": "sm"
+            }
+          }
+
+
+            )
 
 
 
