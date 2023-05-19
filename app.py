@@ -800,7 +800,7 @@ def handle_message(event):
                   "type": "image",
                   "size": "lg",
                   "aspectMode": "cover",
-                  "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/conclusion.png",
+                  "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/conclusion2.png",
                   "margin": "xl",
                   "offsetStart": "md"
                 },
