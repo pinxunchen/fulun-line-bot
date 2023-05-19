@@ -1056,10 +1056,7 @@ def handle_message(event):
                           "action": {
                             "type": "uri",
                             "label": "action",
-                            "uri": "http://linecorp.com/",
-                            "altUri": {
-                              "desktop": "https://lin.ee/F9sIMMq"
-                            }
+                            "uri": "https://lin.ee/F9sIMMq",
                           }
                         },
                         {
