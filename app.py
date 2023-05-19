@@ -15,117 +15,148 @@ def handle_message(event):
     if event.message.text == '我要預約':
         flex_message = FlexSendMessage(
             alt_text='我要預約',
-            contents={"type": "bubble",
+            contents={
+            "type": "bubble",
             "size": "kilo",
             "hero": {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "image",
-                "size": "lg",
-                "aspectMode": "cover",
-                "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/booking.png",
-                "margin": "xl"
-              },
-              {
-                "type": "text",
-                "text": "請選擇預約區域",
-                "size": "lg",
-                "weight": "bold",
-                "margin": "none",
-                "offsetTop": "md",
-                "contents": [],
-                "offsetStart": "lg"
-              },
-              {
-                "type": "text",
-                "text": "填寫表單後，將由客服推播趟次",
-                "size": "sm",
-                "color": "#1E90FF",
-                "offsetTop": "md",
-                "offsetStart": "lg"
-              },
-              {
-                "type": "separator",
-                "margin": "xl",
-                "color": "#BEBEBF"
-              }              
-              ]
-              },
-                "body": {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-              {
-                "type": "text",
-                "text": "台北長照",
-                "size": "md",
-                "align": "center",
-                "margin": "lg",
-                "action": {
-                "type": "uri",
-                "label": "action",
-                "uri": "http://linecorp.com/"
-              },
-                "offsetBottom": "sm"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-              {
-                "type": "separator",
-                "margin": "lg",
-                "color": "#BEBEBE"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-              {
-                "type": "text",
-                "text": "新北長照",
-                "size": "md",
-                "align": "center",
-                "margin": "xxl",
-                "action": {
-                "type": "uri",
-                "label": "action",
-                "uri": "http://linecorp.com/"
-              }
-              },
-              {
-                "type": "separator",
-                "margin": "lg",
-                "color": "#BEBEBE"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-              {
-                "type": "text",
-                "text": "僅愛接送(自費交通)",
-                "margin": "xxl",
-                "size": "md",
-                "align": "center",
-                "action": {
-                "type": "uri",
-                "label": "action",
-                "uri": "https://github.com/pinxunchen/fulun-line-bot/raw/master/%E9%A6%96%E6%AC%A1%E5%88%87%E7%B5%90%E6%9B%B8.pdf"
-              }
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ],
-                        "offsetBottom": "md"
-                      }
-                    ]
-                  }
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "size": "lg",
+                  "aspectMode": "cover",
+                  "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/booking.png",
+                  "margin": "xl"
+                },
+                {
+                  "type": "text",
+                  "text": "請選擇預約區域",
+                  "size": "lg",
+                  "weight": "bold",
+                  "margin": "none",
+                  "offsetTop": "md",
+                  "contents": [],
+                  "offsetStart": "lg"
+                },
+                {
+                  "type": "text",
+                  "text": "填寫表單後，將由客服推播趟次",
+                  "size": "sm",
+                  "color": "#1E90FF",
+                  "offsetTop": "md",
+                  "offsetStart": "lg",
+                  "weight": "bold"
+                },
+                {
+                  "type": "separator",
+                  "margin": "xl",
+                  "color": "#BEBEBF"
                 }
+              ]
+            },
+            "body": {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "台北長照",
+                  "size": "md",
+                  "align": "center",
+                  "margin": "lg",
+                  "action": {
+                    "type": "uri",
+                    "label": "action",
+                    "uri": "http://linecorp.com/"
+                  },
+                  "offsetBottom": "sm"
+                },
+                {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "separator",
+                      "margin": "lg",
+                      "color": "#BEBEBE"
+                    },
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "新北長照",
+                          "size": "md",
+                          "align": "center",
+                          "margin": "xxl",
+                          "action": {
+                            "type": "uri",
+                            "label": "action",
+                            "uri": "http://linecorp.com/"
+                          }
+                        },
+                        {
+                          "type": "separator",
+                          "margin": "lg",
+                          "color": "#BEBEBE"
+                        },
+                        {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "text": "桃園長照",
+                              "margin": "xxl",
+                              "size": "md",
+                              "align": "center",
+                              "action": {
+                                "type": "uri",
+                                "label": "action",
+                                "uri": "http://linecorp.com/"
+                              }
+                            },
+                            {
+                              "type": "separator",
+                              "margin": "lg",
+                              "color": "#BEBEBE"
+                            },
+                            {
+                              "type": "box",
+                              "layout": "vertical",
+                              "contents": [
+                                {
+                                  "type": "box",
+                                  "layout": "vertical",
+                                  "contents": [
+                                    {
+                                      "type": "text",
+                                      "text": "愛接送(交通自費)",
+                                      "margin": "xxl",
+                                      "size": "md",
+                                      "align": "center",
+                                      "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": "http://linecorp.com/"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "offsetBottom": "md"
+                }
+              ]
+            }
+          }
        )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
