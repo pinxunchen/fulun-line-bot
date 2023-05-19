@@ -24,7 +24,7 @@ def handle_message(event):
               "contents": [
                 {
                   "type": "image",
-                  "size": "lg",
+                  "size": "xl",
                   "aspectMode": "cover",
                   "url": "https://raw.githubusercontent.com/pinxunchen/fulun-line-bot/master/src/booking.png",
                   "margin": "xl"
