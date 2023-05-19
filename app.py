@@ -967,7 +967,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, flex_message)
 
     if event.message.text == 'LINE連結':
-      flex_message = FlexSendMessage(
+        flex_message = FlexSendMessage(
             alt_text='LINE連結',
             contents={
             "type": "bubble",
@@ -1121,7 +1121,7 @@ def handle_message(event):
 
 
             )
-          line_bot_api.reply_message(event.reply_token, flex_message)
+        line_bot_api.reply_message(event.reply_token, flex_message)
 
 
 
