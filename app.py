@@ -68,7 +68,7 @@ def handle_message(event):
                   "action": {
                     "type": "uri",
                     "label": "action",
-                    "uri": "http://linecorp.com/"
+                    "uri": "https://reurl.cc/14yn0D"
                   },
                   "offsetBottom": "sm"
                 },
@@ -94,7 +94,7 @@ def handle_message(event):
                           "action": {
                             "type": "uri",
                             "label": "action",
-                            "uri": "http://linecorp.com/"
+                            "uri": "https://reurl.cc/WLle1D"
                           }
                         },
                         {
@@ -115,7 +115,7 @@ def handle_message(event):
                               "action": {
                                 "type": "uri",
                                 "label": "action",
-                                "uri": "http://linecorp.com/"
+                                "uri": "https://reurl.cc/Nq5lr5"
                               }
                             },
                             {
@@ -140,7 +140,7 @@ def handle_message(event):
                                       "action": {
                                         "type": "uri",
                                         "label": "action",
-                                        "uri": "http://linecorp.com/"
+                                        "uri": "https://reurl.cc/14yn0D"
                                       }
                                     }
                                   ]
