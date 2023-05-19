@@ -221,7 +221,7 @@ def handle_message(event):
                               "type": "span",
                               "text": "新北",
                               "size": "xxl",
-                              "color": "#9400D3"
+                              "color": "#8B00FF"
                             },
                             {
                               "type": "span",
