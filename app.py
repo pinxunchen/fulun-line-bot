@@ -115,7 +115,7 @@ def handle_message(event):
                               "action": {
                                 "type": "uri",
                                 "label": "action",
-                                "uri": "https://fulun.s3.ap-southeast-2.amazonaws.com/fulun/index.html"
+                                "uri": "https://liff.line.me/1660683719-4N2ppZbQ"
                               }
                             },
                             {
