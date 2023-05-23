@@ -1478,61 +1478,11 @@ def handle_message(event):
                                 "displayText": "900"
                               },
                               "weight": "bold"
-                            }
-                          ],
-                          "paddingTop": "lg"
-                        }
-                      ],
-                      "paddingTop": "lg"
-                    },
-                    {
-                      "type": "separator",
-                      "margin": "md",
-                      "color": "#8B4513"
-                    },
-                    {
-                      "type": "box",
-                      "layout": "vertical",
-                      "contents": [
-                        {
-                          "type": "text",
-                          "text": "一般戶",
-                          "size": "lg",
-                          "align": "center",
-                          "weight": "bold",
-                          "action": {
-                            "type": "postback",
-                            "label": "action",
-                            "data": "hello",
-                            "displayText": "0.7"
-                          }
-                        },
-                        {
-                          "type": "separator",
-                          "color": "#BEBEBE",
-                          "margin": "md"
-                        },
-                        {
-                          "type": "box",
-                          "layout": "vertical",
-                          "contents": [
-                            {
-                              "type": "text",
-                              "text": "中低收入戶",
-                              "size": "lg",
-                              "align": "center",
-                              "weight": "bold",
-                              "action": {
-                                "type": "postback",
-                                "label": "action",
-                                "data": "hello",
-                                "displayText": "0.9"
-                              }
                             },
                             {
                               "type": "separator",
-                              "color": "#BEBEBE",
-                              "margin": "md"
+                              "margin": "md",
+                              "color": "#8B4513"
                             },
                             {
                               "type": "box",
@@ -1540,16 +1490,66 @@ def handle_message(event):
                               "contents": [
                                 {
                                   "type": "text",
+                                  "text": "一般戶",
                                   "size": "lg",
                                   "align": "center",
-                                  "text": "低收入戶",
+                                  "weight": "bold",
                                   "action": {
                                     "type": "postback",
                                     "label": "action",
                                     "data": "hello",
-                                    "displayText": "1"
-                                  },
-                                  "weight": "bold"
+                                    "displayText": "0.7"
+                                  }
+                                },
+                                {
+                                  "type": "separator",
+                                  "color": "#BEBEBE",
+                                  "margin": "md"
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "vertical",
+                                  "contents": [
+                                    {
+                                      "type": "text",
+                                      "text": "中低收入戶",
+                                      "size": "lg",
+                                      "align": "center",
+                                      "weight": "bold",
+                                      "action": {
+                                        "type": "postback",
+                                        "label": "action",
+                                        "data": "hello",
+                                        "displayText": "0.9"
+                                      }
+                                    },
+                                    {
+                                      "type": "separator",
+                                      "color": "#BEBEBE",
+                                      "margin": "md"
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "vertical",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "size": "lg",
+                                          "align": "center",
+                                          "text": "低收入戶",
+                                          "action": {
+                                            "type": "postback",
+                                            "label": "action",
+                                            "data": "hello",
+                                            "displayText": "1"
+                                          },
+                                          "weight": "bold"
+                                        }
+                                      ],
+                                      "paddingTop": "lg"
+                                    }
+                                  ],
+                                  "paddingTop": "lg"
                                 }
                               ],
                               "paddingTop": "lg"
@@ -1566,7 +1566,6 @@ def handle_message(event):
               }
             ]
           }
-
             )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
