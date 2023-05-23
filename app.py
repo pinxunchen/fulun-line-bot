@@ -14,70 +14,6 @@ line_bot_api = LineBotApi('mlQ7oqRMEbtzdaO0lG6BmHe2TxMyNv/nEn75lwpOZE0HR3W+nMB8P
 handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
 
-@app.route("/callback", methods=['POST'])
-def callback():
-    signature = request.headers['X-Line-Signature']
-    body = request.get_data(as_text=True)
-    try:
-        handler.handle(body, signature)
-    except InvalidSignatureError:
-        return 'Invalid signature'
-    return 'OK'
-
-@handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-    if event.message.text == '補收試算':
-        flex_message = create_flex_message()
-        line_bot_api.reply_message(event.reply_token, flex_message)
-
-def create_flex_message():
-    flex_message = FlexSendMessage(
-        alt_text='補收試算',
-        contents=BubbleContainer(
-            direction='ltr',
-            body=BoxComponent(
-                layout='vertical',
-                contents=[
-                    ButtonComponent(
-                        style='primary',
-                        color='#0000FF',
-                        height='sm',
-                        action=PostbackAction(
-                            label='一般戶',
-                            data='一般戶'
-                        )
-                    ),
-                    ButtonComponent(
-                        style='primary',
-                        color='#FF0000',
-                        height='sm',
-                        action=PostbackAction(
-                            label='中低收入戶',
-                            data='中低收入戶'
-                        )
-                    ),
-                    ButtonComponent(
-                        style='primary',
-                        color='#00FF00',
-                        height='sm',
-                        action=PostbackAction(
-                            label='低收入戶',
-                            data='低收入戶'
-                        )
-                    )
-                ]
-            )
-        )
-    )
-    return flex_message
-
-@app.route("/postback", methods=['POST'])
-def handle_postback():
-    data = request.json['events'][0]['postback']['data']
-    user_id = request.json['events'][0]['source']['userId']
-    line_bot_api.push_message(user_id, TextSendMessage(text=data))
-    return 'OK'
-
 # 定義處理用戶訊息的函數
 def handle_message(event):
 
@@ -1221,9 +1157,6 @@ def handle_message(event):
             )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
-    if event.message.text == '補收試算':
-        flex_message = create_flex_message()
-        line_bot_api.reply_message(event.reply_token, flex_message)
 
 # 設定 Webhook 路由，接收 Line 平台發送的事件
 @app.route('/callback', methods=['POST'])
