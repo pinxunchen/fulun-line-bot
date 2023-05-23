@@ -971,13 +971,13 @@ def handle_message(event):
                           "text": "補收試算",
                           "size": "md",
                           "align": "center",
-                          "margin": "xxl" ,
+                          "margin": "xxl",
                           "action": {
-                          "type": "postback",
-                          "label": "action",
-                          "data": "hello",
-                          "displayText": "補收試算"
-                        },
+                            "type": "postback",
+                            "label": "action",
+                            "data": "hello",
+                            "displayText": "補收試算"
+                          }
                         },
                         {
                           "type": "separator",
@@ -1167,204 +1167,411 @@ def handle_message(event):
         flex_message = FlexSendMessage(
             alt_text='補收試算',
             contents={
-  "type": "carousel",
-  "contents": [
-    {
-      "type": "bubble",
-      "hero": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "新北長照文件",
-            "size": "xl",
+            "type": "carousel",
             "contents": [
               {
-                "type": "span",
-                "text": "請選擇個案",
-                "size": "xl"
-              },
-              {
-                "type": "span",
-                "text": "樓層及身分別",
-                "color": "#1E90FF",
-                "size": "xl",
-                "weight": "bold"
-              }
-            ],
-            "offsetStart": "lg",
-            "margin": "xl",
-            "offsetBottom": "sm",
-            "weight": "bold"
-          },
-          {
-            "type": "text",
-            "text": "選擇完樓層請選擇身分別",
-            "offsetStart": "lg",
-            "weight": "bold",
-            "color": "#FF2400",
-            "size": "lg"
-          },
-          {
-            "type": "separator",
-            "margin": "md",
-            "color": "#8B4513"
-          }
-        ],
-        "paddingAll": "md"
-      },
-      "body": {
-        "type": "box",
-        "layout": "vertical",
-        "contents": [
-          {
-            "type": "text",
-            "text": "一、二樓",
-            "size": "lg",
-            "align": "center",
-            "weight": "bold",
-            "action": {
-              "type": "postback",
-              "label": "action",
-              "data": "hello",
-              "displayText": "700"
-            }
-          },
-          {
-            "type": "separator",
-            "color": "#BEBEBE",
-            "margin": "md"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "三樓",
-                "size": "lg",
-                "align": "center",
-                "weight": "bold",
-                "action": {
-                  "type": "postback",
-                  "label": "action",
-                  "data": "hello",
-                  "displayText": "800"
-                }
-              },
-              {
-                "type": "separator",
-                "color": "#BEBEBE",
-                "margin": "md"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "size": "lg",
-                    "align": "center",
-                    "text": "四、五樓",
-                    "action": {
-                      "type": "postback",
-                      "label": "action",
-                      "data": "hello",
-                      "displayText": "900"
-                    },
-                    "weight": "bold"
-                  }
-                ],
-                "paddingTop": "lg"
-              }
-            ],
-            "paddingTop": "lg"
-          },
-          {
-            "type": "separator",
-            "margin": "md",
-            "color": "#8B4513"
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "contents": [
-              {
-                "type": "text",
-                "text": "一般戶",
-                "size": "lg",
-                "align": "center",
-                "weight": "bold",
-                "action": {
-                  "type": "postback",
-                  "label": "action",
-                  "data": "hello",
-                  "displayText": "0.7"
-                }
-              },
-              {
-                "type": "separator",
-                "color": "#BEBEBE",
-                "margin": "md"
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "中低收入戶",
-                    "size": "lg",
-                    "align": "center",
-                    "weight": "bold",
-                    "action": {
-                      "type": "postback",
-                      "label": "action",
-                      "data": "hello",
-                      "displayText": "0.9"
-                    }
-                  },
-                  {
-                    "type": "separator",
-                    "color": "#BEBEBE",
-                    "margin": "md"
-                  },
-                  {
-                    "type": "box",
-                    "layout": "vertical",
-                    "contents": [
-                      {
-                        "type": "text",
-                        "size": "lg",
-                        "align": "center",
-                        "text": "低收入戶",
-                        "action": {
-                          "type": "postback",
-                          "label": "action",
-                          "data": "hello",
-                          "displayText": "1"
+                "type": "bubble",
+                "hero": {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "新北長照文件",
+                      "size": "xl",
+                      "contents": [
+                        {
+                          "type": "span",
+                          "text": "請選擇個案",
+                          "size": "xl"
                         },
-                        "weight": "bold"
+                        {
+                          "type": "span",
+                          "text": "樓層及身分別",
+                          "color": "#1E90FF",
+                          "size": "xl",
+                          "weight": "bold"
+                        }
+                      ],
+                      "offsetStart": "lg",
+                      "margin": "xl",
+                      "offsetBottom": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "選擇完樓層請選擇身分別",
+                      "offsetStart": "lg",
+                      "weight": "bold",
+                      "color": "#FF2400",
+                      "size": "lg"
+                    },
+                    {
+                      "type": "separator",
+                      "margin": "md",
+                      "color": "#8B4513"
+                    }
+                  ],
+                  "paddingAll": "md"
+                },
+                "body": {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "一、二樓",
+                      "size": "lg",
+                      "align": "center",
+                      "weight": "bold",
+                      "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello",
+                        "displayText": "700"
                       }
-                    ],
-                    "paddingTop": "lg"
-                  }
-                ],
-                "paddingTop": "lg"
+                    },
+                    {
+                      "type": "separator",
+                      "color": "#BEBEBE",
+                      "margin": "md"
+                    },
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "三樓",
+                          "size": "lg",
+                          "align": "center",
+                          "weight": "bold",
+                          "action": {
+                            "type": "postback",
+                            "label": "action",
+                            "data": "hello",
+                            "displayText": "800"
+                          }
+                        },
+                        {
+                          "type": "separator",
+                          "color": "#BEBEBE",
+                          "margin": "md"
+                        },
+                        {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "size": "lg",
+                              "align": "center",
+                              "text": "四、五樓",
+                              "action": {
+                                "type": "postback",
+                                "label": "action",
+                                "data": "hello",
+                                "displayText": "900"
+                              },
+                              "weight": "bold"
+                            }
+                          ],
+                          "paddingTop": "lg"
+                        }
+                      ],
+                      "paddingTop": "lg"
+                    },
+                    {
+                      "type": "separator",
+                      "margin": "md",
+                      "color": "#8B4513"
+                    },
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "一般戶",
+                          "size": "lg",
+                          "align": "center",
+                          "weight": "bold",
+                          "action": {
+                            "type": "postback",
+                            "label": "action",
+                            "data": "hello",
+                            "displayText": "0.7"
+                          }
+                        },
+                        {
+                          "type": "separator",
+                          "color": "#BEBEBE",
+                          "margin": "md"
+                        },
+                        {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "text": "中低收入戶",
+                              "size": "lg",
+                              "align": "center",
+                              "weight": "bold",
+                              "action": {
+                                "type": "postback",
+                                "label": "action",
+                                "data": "hello",
+                                "displayText": "0.9"
+                              }
+                            },
+                            {
+                              "type": "separator",
+                              "color": "#BEBEBE",
+                              "margin": "md"
+                            },
+                            {
+                              "type": "box",
+                              "layout": "vertical",
+                              "contents": [
+                                {
+                                  "type": "text",
+                                  "size": "lg",
+                                  "align": "center",
+                                  "text": "低收入戶",
+                                  "action": {
+                                    "type": "postback",
+                                    "label": "action",
+                                    "data": "hello",
+                                    "displayText": "1"
+                                  },
+                                  "weight": "bold"
+                                }
+                              ],
+                              "paddingTop": "lg"
+                            }
+                          ],
+                          "paddingTop": "lg"
+                        }
+                      ],
+                      "paddingTop": "lg"
+                    }
+                  ],
+                  "paddingTop": "md"
+                }
               }
-            ],
-            "paddingTop": "lg"
+            ]
           }
-        ],
-        "paddingTop": "md"
-      }
-    }
-  ]
-}
+
+                      )
+        line_bot_api.reply_message(event.reply_token, flex_message)
+
+
+    if event.message.text == '補收試算':
+        flex_message = FlexSendMessage(
+            alt_text='補收試算',
+            contents={
+            "type": "carousel",
+            "contents": [
+              {
+                "type": "bubble",
+                "hero": {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "新北長照文件",
+                      "size": "xl",
+                      "contents": [
+                        {
+                          "type": "span",
+                          "text": "請選擇個案",
+                          "size": "xl"
+                        },
+                        {
+                          "type": "span",
+                          "text": "樓層及身分別",
+                          "color": "#1E90FF",
+                          "size": "xl",
+                          "weight": "bold"
+                        }
+                      ],
+                      "offsetStart": "lg",
+                      "margin": "xl",
+                      "offsetBottom": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "選擇完樓層請選擇身分別",
+                      "offsetStart": "lg",
+                      "weight": "bold",
+                      "color": "#FF2400",
+                      "size": "lg"
+                    },
+                    {
+                      "type": "separator",
+                      "margin": "md",
+                      "color": "#8B4513"
+                    }
+                  ],
+                  "paddingAll": "md"
+                },
+                "body": {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "一、二樓",
+                      "size": "lg",
+                      "align": "center",
+                      "weight": "bold",
+                      "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello",
+                        "displayText": "700"
+                      }
+                    },
+                    {
+                      "type": "separator",
+                      "color": "#BEBEBE",
+                      "margin": "md"
+                    },
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "三樓",
+                          "size": "lg",
+                          "align": "center",
+                          "weight": "bold",
+                          "action": {
+                            "type": "postback",
+                            "label": "action",
+                            "data": "hello",
+                            "displayText": "800"
+                          }
+                        },
+                        {
+                          "type": "separator",
+                          "color": "#BEBEBE",
+                          "margin": "md"
+                        },
+                        {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "size": "lg",
+                              "align": "center",
+                              "text": "四、五樓",
+                              "action": {
+                                "type": "postback",
+                                "label": "action",
+                                "data": "hello",
+                                "displayText": "900"
+                              },
+                              "weight": "bold"
+                            }
+                          ],
+                          "paddingTop": "lg"
+                        }
+                      ],
+                      "paddingTop": "lg"
+                    },
+                    {
+                      "type": "separator",
+                      "margin": "md",
+                      "color": "#8B4513"
+                    },
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "一般戶",
+                          "size": "lg",
+                          "align": "center",
+                          "weight": "bold",
+                          "action": {
+                            "type": "postback",
+                            "label": "action",
+                            "data": "hello",
+                            "displayText": "0.7"
+                          }
+                        },
+                        {
+                          "type": "separator",
+                          "color": "#BEBEBE",
+                          "margin": "md"
+                        },
+                        {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "text": "中低收入戶",
+                              "size": "lg",
+                              "align": "center",
+                              "weight": "bold",
+                              "action": {
+                                "type": "postback",
+                                "label": "action",
+                                "data": "hello",
+                                "displayText": "0.9"
+                              }
+                            },
+                            {
+                              "type": "separator",
+                              "color": "#BEBEBE",
+                              "margin": "md"
+                            },
+                            {
+                              "type": "box",
+                              "layout": "vertical",
+                              "contents": [
+                                {
+                                  "type": "text",
+                                  "size": "lg",
+                                  "align": "center",
+                                  "text": "低收入戶",
+                                  "action": {
+                                    "type": "postback",
+                                    "label": "action",
+                                    "data": "hello",
+                                    "displayText": "1"
+                                  },
+                                  "weight": "bold"
+                                }
+                              ],
+                              "paddingTop": "lg"
+                            }
+                          ],
+                          "paddingTop": "lg"
+                        }
+                      ],
+                      "paddingTop": "lg"
+                    }
+                  ],
+                  "paddingTop": "md"
+                }
+              }
+            ]
+          }
 
             )
         line_bot_api.reply_message(event.reply_token, flex_message)
+
+
+
 
 # 設定 Webhook 路由，接收 Line 平台發送的事件
 @app.route('/callback', methods=['POST'])
