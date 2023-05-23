@@ -1,6 +1,11 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
-from linebot.models import MessageEvent, TextMessage, FlexSendMessage
+from linebot.models import (
+    MessageEvent, TextMessage, TextSendMessage,
+    FlexSendMessage, BubbleContainer, BoxComponent,
+    ButtonComponent, PostbackAction
+)
+
 
 app = Flask(__name__)
 
@@ -8,6 +13,119 @@ app = Flask(__name__)
 line_bot_api = LineBotApi('mlQ7oqRMEbtzdaO0lG6BmHe2TxMyNv/nEn75lwpOZE0HR3W+nMB8PjBbrhlqOO5Ic7nie1aVaZZAjbDL4MJsz2jo+cMuPs2v/up2vmoIqv7RBxEx8VR9456FmZqjNc5k5I5j/Cwn3OzbLS5CT+4/BAdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
 
+
+def get_rate(identity):
+    rates = {
+        '一般戶': 0.7,
+        '中低收入戶': 0.9,
+        '低收入戶': 1
+    }
+    return rates.get(identity, 0)
+
+def get_amount(floor):
+    amounts = {
+        '一二樓': 700,
+        '三樓': 800,
+        '四五樓': 900
+    }
+    return amounts.get(floor, 0)
+
+
+def create_flex_message():
+    flex_message = FlexSendMessage(
+        alt_text='補收試算',
+        contents=BubbleContainer(
+            direction='ltr',
+            body=BoxComponent(
+                layout='vertical',
+                contents=[
+                    ButtonComponent(
+                        style='primary',
+                        color='#0000FF',
+                        height='sm',
+                        action=PostbackAction(
+                            label='一般戶',
+                            data='身份別:一般戶'
+                        )
+                    ),
+                    ButtonComponent(
+                        style='primary',
+                        color='#FF0000',
+                        height='sm',
+                        action=PostbackAction(
+                            label='中低收入戶',
+                            data='身份別:中低收入戶'
+                        )
+                    ),
+                    ButtonComponent(
+                        style='primary',
+                        color='#00FF00',
+                        height='sm',
+                        action=PostbackAction(
+                            label='低收入戶',
+                            data='身份別:低收入戶'
+                        )
+                    )
+                ]
+            )
+        )
+    )
+    return flex_message
+
+@app.route("/postback", methods=['POST'])
+def handle_postback():
+    data = request.json['events'][0]['postback']['data']
+    if data.startswith('身份別'):
+        identity = data.split(':')[1]
+        flex_message = create_flex_message_floor(identity)
+        line_bot_api.reply_message(request.json['events'][0]['replyToken'], flex_message)
+    elif data.startswith('樓層'):
+        floor = data.split(':')[1]
+        user_id = request.json['events'][0]['source']['userId']
+        reply_text = f"請輸入剩餘額度（樓層：{floor}，身份別：{data.split(':')[2]}）"
+        line_bot_api.push_message(user_id, TextSendMessage(text=reply_text))
+    return 'OK'
+
+def create_flex_message_floor(identity):
+    flex_message = FlexSendMessage(
+        alt_text='選擇樓層',
+        contents=BubbleContainer(
+            direction='ltr',
+            body=BoxComponent(
+                layout='vertical',
+                contents=[
+                    ButtonComponent(
+                        style='primary',
+                        color='#0000FF',
+                        height='sm',
+                        action=PostbackAction(
+                            label='一二樓',
+                            data=f'樓層:一二樓:身份別:{identity}'
+                        )
+                    ),
+                    ButtonComponent(
+                        style='primary',
+                        color='#FF0000',
+                        height='sm',
+                        action=PostbackAction(
+                            label='三樓',
+                            data=f'樓層:三樓:身份別:{identity}'
+                        )
+                    ),
+                    ButtonComponent(
+                        style='primary',
+                        color='#00FF00',
+                        height='sm',
+                        action=PostbackAction(
+                            label='四五樓',
+                            data=f'樓層:四五樓:身份別:{identity}'
+                        )
+                    )
+                ]
+            )
+        )
+    )
+    return flex_message
 # 定義處理用戶訊息的函數
 def handle_message(event):
 
@@ -1151,7 +1269,9 @@ def handle_message(event):
             )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
-
+    if event.message.text == '補收試算':
+        flex_message = create_flex_message()
+        line_bot_api.reply_message(event.reply_token, flex_message)
 
 # 設定 Webhook 路由，接收 Line 平台發送的事件
 @app.route('/callback', methods=['POST'])
