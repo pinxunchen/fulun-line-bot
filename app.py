@@ -863,7 +863,7 @@ def handle_message(event):
                       "contents": [
                         {
                           "type": "text",
-                          "text": "長照資格查詢",
+                          "text": "歷史紀錄",
                           "size": "md",
                           "align": "center",
                           "margin": "xxl"
@@ -879,7 +879,7 @@ def handle_message(event):
                           "contents": [
                             {
                               "type": "text",
-                              "text": "個案管理",
+                              "text": "長照資格查詢",
                               "margin": "xxl",
                               "size": "md",
                               "align": "center"
