@@ -1,12 +1,18 @@
 from flask import Flask, request
 from linebot import LineBotApi, WebhookHandler
-from linebot.models import MessageEvent, TextMessage, FlexSendMessage
+from linebot.models import (
+    MessageEvent, TextMessage, TextSendMessage,
+    FlexSendMessage, BubbleContainer, BoxComponent,
+    ButtonComponent, PostbackAction
+)
+
 
 app = Flask(__name__)
 
 # 設定 Channel Access Token 和 Channel Secret
 line_bot_api = LineBotApi('mlQ7oqRMEbtzdaO0lG6BmHe2TxMyNv/nEn75lwpOZE0HR3W+nMB8PjBbrhlqOO5Ic7nie1aVaZZAjbDL4MJsz2jo+cMuPs2v/up2vmoIqv7RBxEx8VR9456FmZqjNc5k5I5j/Cwn3OzbLS5CT+4/BAdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('fa1fd1143b0de6b63018eda97d4dcbea')
+
 
 # 定義處理用戶訊息的函數
 def handle_message(event):
@@ -857,7 +863,7 @@ def handle_message(event):
                       "contents": [
                         {
                           "type": "text",
-                          "text": "歷史紀錄",
+                          "text": "長照資格查詢",
                           "size": "md",
                           "align": "center",
                           "margin": "xxl"
@@ -873,7 +879,7 @@ def handle_message(event):
                           "contents": [
                             {
                               "type": "text",
-                              "text": "長照資格查詢",
+                              "text": "個案管理",
                               "margin": "xxl",
                               "size": "md",
                               "align": "center"
@@ -965,7 +971,7 @@ def handle_message(event):
                           "text": "補收試算",
                           "size": "md",
                           "align": "center",
-                          "margin": "xxl"
+                          "margin": "xxl",
                         },
                         {
                           "type": "separator",
@@ -1149,6 +1155,209 @@ def handle_message(event):
 
 
             )
+        line_bot_api.reply_message(event.reply_token, flex_message)
+
+     if event.message.text == '補收試算':
+        flex_message = FlexSendMessage(
+            alt_text='補收試算',
+            contents={
+            "type": "carousel",
+            "contents": [
+              {
+                "type": "bubble",
+                "hero": {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "新北長照文件",
+                      "size": "xl",
+                      "contents": [
+                        {
+                          "type": "span",
+                          "text": "請選擇個案",
+                          "size": "xl"
+                        },
+                        {
+                          "type": "span",
+                          "text": "樓層及身分別",
+                          "color": "#1E90FF",
+                          "size": "xl",
+                          "weight": "bold"
+                        }
+                      ],
+                      "offsetStart": "lg",
+                      "margin": "xl",
+                      "offsetBottom": "sm",
+                      "weight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "text": "選擇完樓層請選擇身分別",
+                      "offsetStart": "lg",
+                      "weight": "bold",
+                      "color": "#FF2400",
+                      "size": "lg"
+                    },
+                    {
+                      "type": "separator",
+                      "margin": "md",
+                      "color": "#8B4513"
+                    }
+                  ],
+                  "paddingAll": "md"
+                },
+                "body": {
+                  "type": "box",
+                  "layout": "vertical",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": "一、二樓",
+                      "size": "lg",
+                      "align": "center",
+                      "weight": "bold",
+                      "action": {
+                        "type": "postback",
+                        "label": "action",
+                        "data": "hello",
+                        "displayText": "700"
+                      }
+                    },
+                    {
+                      "type": "separator",
+                      "color": "#BEBEBE",
+                      "margin": "md"
+                    },
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "三樓",
+                          "size": "lg",
+                          "align": "center",
+                          "weight": "bold",
+                          "action": {
+                            "type": "postback",
+                            "label": "action",
+                            "data": "hello",
+                            "displayText": "800"
+                          }
+                        },
+                        {
+                          "type": "separator",
+                          "color": "#BEBEBE",
+                          "margin": "md"
+                        },
+                        {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "size": "lg",
+                              "align": "center",
+                              "text": "四、五樓",
+                              "action": {
+                                "type": "postback",
+                                "label": "action",
+                                "data": "hello",
+                                "displayText": "900"
+                              },
+                              "weight": "bold"
+                            }
+                          ],
+                          "paddingTop": "lg"
+                        }
+                      ],
+                      "paddingTop": "lg"
+                    },
+                    {
+                      "type": "separator",
+                      "margin": "md",
+                      "color": "#8B4513"
+                    },
+                    {
+                      "type": "box",
+                      "layout": "vertical",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "一般戶",
+                          "size": "lg",
+                          "align": "center",
+                          "weight": "bold",
+                          "action": {
+                            "type": "postback",
+                            "label": "action",
+                            "data": "hello",
+                            "displayText": "0.7"
+                          }
+                        },
+                        {
+                          "type": "separator",
+                          "color": "#BEBEBE",
+                          "margin": "md"
+                        },
+                        {
+                          "type": "box",
+                          "layout": "vertical",
+                          "contents": [
+                            {
+                              "type": "text",
+                              "text": "中低收入戶",
+                              "size": "lg",
+                              "align": "center",
+                              "weight": "bold",
+                              "action": {
+                                "type": "postback",
+                                "label": "action",
+                                "data": "hello",
+                                "displayText": "0.9"
+                              }
+                            },
+                            {
+                              "type": "separator",
+                              "color": "#BEBEBE",
+                              "margin": "md"
+                            },
+                            {
+                              "type": "box",
+                              "layout": "vertical",
+                              "contents": [
+                                {
+                                  "type": "text",
+                                  "size": "lg",
+                                  "align": "center",
+                                  "text": "低收入戶",
+                                  "action": {
+                                    "type": "postback",
+                                    "label": "action",
+                                    "data": "hello",
+                                    "displayText": "1"
+                                  },
+                                  "weight": "bold"
+                                }
+                              ],
+                              "paddingTop": "lg"
+                            }
+                          ],
+                          "paddingTop": "lg"
+                        }
+                      ],
+                      "paddingTop": "lg"
+                    }
+                  ],
+                  "paddingTop": "md"
+                }
+              }
+            ]
+          }
+
+                      )
         line_bot_api.reply_message(event.reply_token, flex_message)
 
 
